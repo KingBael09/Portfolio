@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   margin-top: auto;
+  gap: 10px;
 }
 
 .base {
@@ -10,18 +11,67 @@
   padding: 1rem 0;
 }
 
-/* .contact {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-
 .icon {
-  font-size: 1.4rem;
+  font-size: 2.5rem;
+  /* padding: 10px; */
+  /* height: 3.5rem;
+  width: 3.5rem; */
 }
 
-.mail {
+.qLink:hover,
+.qLink:focus,
+.qLink:active {
+  transform: scale(1.5);
+}
+
+.contact {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.minor {
   display: flex;
   align-items: center;
-  gap: 10px;
-} */
+  justify-content: space-evenly;
+}
+
+@media (max-width: 850px) {
+  .icon {
+    font-size: 2rem;
+  }
+}
+
+.qLink {
+  border-radius: 50%;
+  padding: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.twitter:hover,
+.twitter:focus,
+.twitter:active {
+  background-color: hsl(203, 89%, 53%);
+}
+.insta:hover,
+.insta:focus,
+.insta:active {
+  background-color: hsl(0, 89%, 53%);
+}
+.github:hover,
+.github:focus,
+.github:active {
+  /* background-color: hsl(217, 7%, 50%); */
+  background-color: hsl(0, 0%, 75%);
+}
+.mail:hover,
+.mail:focus,
+.mail:active {
+  /* background-color: hsl(150, 90%, 75%); */
+  background-color: rgb(90, 255, 192);
+}
+.linkedin:hover,
+.linkedin:focus,
+.linkedin:active {
+  background-color: hsl(200, 90%, 50%);
+}

@@ -14,8 +14,8 @@ import NotFound from "./pages/notFound";
 function App() {
   return (
     <div className={styles.App}>
-      <Pannel />
       <Router>
+        <Pannel />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
@@ -23,8 +23,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Footer />
       </Router>
-      <Footer />
     </div>
   );
 }

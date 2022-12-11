@@ -67,7 +67,6 @@
 .mItems {
   display: flex;
   /* background-color: hsl(60, 8%, 95%); */
-  /* background-color: white; */
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -105,12 +104,9 @@
 
 .pannel {
   position: fixed;
-  right: 5%;
-  /* background-color: red; */
-  background-color: white;
-  outline: 1px solid black;
+  right: 2vw;
   border-radius: 30px;
-  width: 10vw;
+  width: 13vw;
   height: 90vh;
   top: 5vh;
   padding: 1rem;
@@ -119,37 +115,48 @@
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
-  cursor: pointer;
+  /* cursor: pointer; */
   user-select: none;
+  /* TODO: TEMP */
+  background-color: white;
+  outline: 1px solid black;
+  gap: 1rem;
 }
 
 .itemSet {
   display: flex;
   flex-grow: 1;
+  width: 100%;
   justify-content: center;
   align-items: center;
   gap: 10px;
   position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  transition: 0.3s ease-in-out !important;
 }
 
 .icons {
   font-size: 3rem;
   flex: 1;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
 }
 
 .title {
   position: absolute;
-  font-size: 1.5vw;
+  font-size: 1.3vw;
   font-weight: 600;
   flex: 1;
-  transform: translateX(10vw);
+  /* transform: translateX(10vw); */
   opacity: 0;
   transition: all 0.5s ease-in-out;
 }
 
 .itemSet,
 .icons {
-  transition: all 0.3s ease-in-out;
+  transition: transform 0.4s ease-in-out;
 }
 
 .itemSet:hover .icons {
@@ -158,4 +165,13 @@
 .itemSet:hover .title {
   transform: translateX(0);
   opacity: 1;
+}
+
+.itemSet:hover {
+  /* TODO: TEMP */
+  background-color: lightblue;
+}
+
+.itemSet:active {
+  background-color: hsl(0, 100%, 82%);
 }
