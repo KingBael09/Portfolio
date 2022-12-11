@@ -1,0 +1,161 @@
+/* Query for design Shifting */
+@media (max-width: 850px) {
+  .desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 850px) {
+  .mobile {
+    display: none;
+  }
+}
+
+/* Mobile Design */
+
+.mobile {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  /* z-index: 80; */
+}
+
+.button {
+  text-decoration: none;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  border-radius: 10px;
+  backdrop-filter: blur(2px);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.span {
+  background-color: rgba(0, 0, 0, 0.3);
+  /* outline: 1px solid rgba(0, 0, 0, 0.5); */
+  width: 40px;
+  height: 8px;
+  border-radius: 10px;
+}
+
+.mMenu {
+  position: fixed;
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* align-items: center; */
+  gap: 1rem;
+  /* padding: 3rem 2rem; */
+  padding: 0.5rem 1rem 1.5rem;
+}
+
+.mHeading {
+  font-size: 2rem;
+  padding: 1rem;
+  font-weight: 600;
+}
+
+.mItems {
+  display: flex;
+  /* background-color: hsl(60, 8%, 95%); */
+  /* background-color: white; */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-grow: 1;
+  border-radius: 40px;
+  outline: 1px solid black;
+  gap: 1rem;
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+}
+
+.mTitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  z-index: 1;
+}
+
+.mIcons {
+  font-size: 10rem;
+  color: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  z-index: 0;
+}
+
+.mItems:nth-child(even) > .mIcons {
+  right: 2rem;
+}
+
+.mItems:nth-child(odd) > .mIcons {
+  left: 2rem;
+}
+
+/* Desktop Design */
+
+.pannel {
+  position: fixed;
+  right: 5%;
+  /* background-color: red; */
+  background-color: white;
+  outline: 1px solid black;
+  border-radius: 30px;
+  width: 10vw;
+  height: 90vh;
+  top: 5vh;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+}
+
+.itemSet {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.icons {
+  font-size: 3rem;
+  flex: 1;
+}
+
+.title {
+  position: absolute;
+  font-size: 1.5vw;
+  font-weight: 600;
+  flex: 1;
+  transform: translateX(10vw);
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.itemSet,
+.icons {
+  transition: all 0.3s ease-in-out;
+}
+
+.itemSet:hover .icons {
+  transform: translateX(-10vw);
+}
+.itemSet:hover .title {
+  transform: translateX(0);
+  opacity: 1;
+}
