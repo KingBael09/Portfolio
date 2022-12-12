@@ -80,12 +80,10 @@
 
   font-weight: 900;
 }
-.altName {
-  /* color: white; */
-}
 
 .altDesg {
   color: hsl(0, 89%, 66%);
+  color: hsl(0, 65%, 51%);
 
   font-weight: 900;
 }
@@ -93,10 +91,6 @@
 .altDesg > div {
   display: inline-block;
 }
-/* 
-.initial{
-  color: white;
-} */
 
 .desg {
   position: absolute;
@@ -126,4 +120,8 @@
   100% {
     transform: translateY(-20%);
   }
+}
+
+.timeline {
+  padding: 2rem;
 }
