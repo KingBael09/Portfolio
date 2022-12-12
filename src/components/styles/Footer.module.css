@@ -9,13 +9,11 @@
 .base {
   user-select: none;
   padding: 1rem 0;
+  /* color: white; */
 }
 
 .icon {
   font-size: 2.5rem;
-  /* padding: 10px; */
-  /* height: 3.5rem;
-  width: 3.5rem; */
 }
 
 .qLink:hover,
@@ -28,6 +26,7 @@
   display: flex;
   gap: 1.5rem;
   margin-top: 1rem;
+  /* color: white; */
 }
 
 .minor {
@@ -56,19 +55,17 @@
 .insta:hover,
 .insta:focus,
 .insta:active {
-  background-color: hsl(0, 89%, 53%);
+  background-color: hsl(323, 100%, 50%);
 }
 .github:hover,
 .github:focus,
 .github:active {
-  /* background-color: hsl(217, 7%, 50%); */
-  background-color: hsl(0, 0%, 75%);
+  background-color: hsl(0, 0%, 0%);
 }
 .mail:hover,
 .mail:focus,
 .mail:active {
-  /* background-color: hsl(150, 90%, 75%); */
-  background-color: rgb(90, 255, 192);
+  background-color: hsl(5, 88%, 51%);
 }
 .linkedin:hover,
 .linkedin:focus,

@@ -17,13 +17,13 @@
   position: fixed;
   top: 10px;
   right: 10px;
-  /* z-index: 80; */
+  z-index: 80;
 }
 
 .button {
   text-decoration: none;
   border: none;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0);
   padding: 8px;
   border-radius: 10px;
   backdrop-filter: blur(2px);
@@ -34,8 +34,7 @@
 }
 
 .span {
-  background-color: rgba(0, 0, 0, 0.3);
-  /* outline: 1px solid rgba(0, 0, 0, 0.5); */
+  background-color: hsla(0, 0%, 100%);
   width: 40px;
   height: 8px;
   border-radius: 10px;
@@ -43,7 +42,7 @@
 
 .mMenu {
   position: fixed;
-  background-color: white;
+  background-color: hsl(0, 0%, 10%);
   width: 100vw;
   height: 100vh;
   top: 0;
@@ -62,11 +61,12 @@
   font-size: 2rem;
   padding: 1rem;
   font-weight: 600;
+  /* color: white; */
 }
 
 .mItems {
   display: flex;
-  /* background-color: hsl(60, 8%, 95%); */
+  background-color: hsl(0, 0%, 20%);
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -83,21 +83,26 @@
   font-size: 1.5rem;
   font-weight: 500;
   z-index: 1;
+  /* color: white; */
 }
 
 .mIcons {
   font-size: 10rem;
-  color: rgba(0, 0, 0, 0.1);
+  /* color: rgba(0, 0, 0, 0.1); */
   position: absolute;
   z-index: 0;
 }
 
 .mItems:nth-child(even) > .mIcons {
   right: 2rem;
+  /* color: hsla(195, 73%, 59%, 0.3); */
+  color: hsl(0, 0%, 70%, 0.2);
 }
 
 .mItems:nth-child(odd) > .mIcons {
   left: 2rem;
+  /* color: hsla(0, 79%, 72%, 0.3); */
+  color: hsl(0, 0%, 70%, 0.2);
 }
 
 /* Desktop Design */
@@ -118,8 +123,9 @@
   /* cursor: pointer; */
   user-select: none;
   /* TODO: TEMP */
-  background-color: white;
-  outline: 1px solid black;
+  /* background-color: white; */
+  background-color: hsl(0, 0%, 30%);
+  /* outline: 1px solid black; */
   gap: 1rem;
 }
 
@@ -134,6 +140,8 @@
   overflow: hidden;
   border-radius: 20px;
   transition: 0.3s ease-in-out !important;
+  /* color: white; */
+  color: black;
 }
 
 .icons {
@@ -149,9 +157,9 @@
   font-size: 1.3vw;
   font-weight: 600;
   flex: 1;
-  /* transform: translateX(10vw); */
   opacity: 0;
   transition: all 0.5s ease-in-out;
+  color: white;
 }
 
 .itemSet,
@@ -169,9 +177,11 @@
 
 .itemSet:hover {
   /* TODO: TEMP */
-  background-color: lightblue;
+  /* background-color: lightblue; */
+  background-color: hsl(0, 0%, 44%);
 }
 
 .itemSet:active {
-  background-color: hsl(0, 100%, 82%);
+  /* background-color: hsl(0, 100%, 82%); */
+  background-color: hsl(0, 0%, 54%);
 }
