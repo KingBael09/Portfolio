@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../styles/Home.module.css";
 import { BsChevronDoubleDown } from "react-icons/bs";
+import { FaGraduationCap, FaBirthdayCake, FaBuilding } from "react-icons/fa";
 import Typewriter from "typewriter-effect";
 import {
   VerticalTimeline,
@@ -8,23 +9,17 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
-const icoStyle = {
-  background: "hsl(0, 0%, 100%)",
-  color: "#fff",
-  outline: " 2px solid black",
-};
 const contEdu = {
-  background: "hsl(0, 0%, 15%)",
-  color: "#fff",
+  background: "hsl(222, 12%, 20%)", // color: "#fff",
 };
 const contPresent = {
-  background: "hsl(219, 70%, 49%)",
-  color: "hsl(0, 0%, 100%)",
+  background: "hsl(219, 70%, 49%)", // color: "hsl(0, 0%, 100%)",
 };
+const arrPresentR = { borderRight: "7px solid  hsl(219, 70%, 49%)" };
 const contZero = {
-  background: "hsl(0, 65%, 51%)",
-  color: "hsl(0, 0%, 100%)",
+  background: "hsl(0, 66%, 47%)", // color: "hsl(0, 0%, 100%)",
 };
+const arrZeroR = { borderRight: "7px solid  hsl(0, 66%, 47%)" };
 
 const Home = () => {
   return (
@@ -63,35 +58,27 @@ const Home = () => {
           </span>
         </div>
         <div className={styles.journey}>
-          <div className={styles.heading}>My Journey</div>
-
+          <div className={styles.heading}>#My Journey</div>
           <div className={styles.timeline}>
-            <VerticalTimeline>
+            <VerticalTimeline className={styles.time}>
               <VerticalTimelineElement
                 className="vertical-timeline-element"
                 contentStyle={contZero}
-                // contentArrowStyle={{
-                //   borderRight: "7px solid  rgb(33, 150, 243)",
-                // }}
+                contentArrowStyle={arrZeroR}
                 date="9th Nov 2002"
-                iconStyle={icoStyle}
+                iconClassName={styles.altIcon}
+                icon={<FaBirthdayCake />}
+                dateClassName={styles.date}
               >
-                <h3 className="vertical-timeline-element-title">
-                  @Day Zero
-                </h3>
-                {/* <h4 className="vertical-timeline-element-subtitle">
-                  Nashik, IN
-                </h4>
-                <p>Schooling till 10th</p> */}
+                <h3 className="vertical-timeline-element-title">@Day Zero</h3>
               </VerticalTimelineElement>
               <VerticalTimelineElement
                 className="vertical-timeline-element"
                 contentStyle={contEdu}
-                // contentArrowStyle={{
-                //   borderRight: "7px solid  rgb(33, 150, 243)",
-                // }}
                 date="~ to 2018"
-                iconStyle={icoStyle}
+                iconClassName={styles.intIcon}
+                icon={<FaGraduationCap />}
+                dateClassName={styles.date}
               >
                 <h3 className="vertical-timeline-element-title">
                   Nashik Cambridge School
@@ -102,10 +89,12 @@ const Home = () => {
                 <p>Schooling till 10th</p>
               </VerticalTimelineElement>
               <VerticalTimelineElement
-                className="vertical-timeline-element"
+                className={"vertical-timeline-element-lmao"}
                 date="2018 to 2020"
                 contentStyle={contEdu}
-                iconStyle={icoStyle}
+                iconClassName={styles.intIcon}
+                icon={<FaGraduationCap />}
+                dateClassName={styles.date}
               >
                 <h3 className="vertical-timeline-element-title">
                   Matoshri Jr College
@@ -119,7 +108,9 @@ const Home = () => {
                 className="vertical-timeline-element"
                 contentStyle={contEdu}
                 date="2020 to 2024"
-                iconStyle={icoStyle}
+                iconClassName={styles.intIcon}
+                icon={<FaGraduationCap />}
+                dateClassName={styles.date}
               >
                 <h3 className="vertical-timeline-element-title">
                   Government College of Engineering
@@ -133,7 +124,10 @@ const Home = () => {
                 className="vertical-timeline-element"
                 contentStyle={contPresent}
                 date="Present"
-                iconStyle={icoStyle}
+                contentArrowStyle={arrPresentR}
+                iconClassName={styles.finalIcon}
+                icon={<FaBuilding />}
+                dateClassName={styles.date}
               >
                 <h3 className="vertical-timeline-element-title">
                   Next Big Thing

@@ -39,28 +39,18 @@ const Pannel = () => {
 
   const showMenu = () => {
     if (Menu === false) {
+      // enable scrolling when not in menu
+      document.body.style.overflow = "auto";
       return <></>;
     } else {
+      // stop scrolling when in menu
+      document.body.style.overflow = "hidden";
       return (
         <div>
           <div className={styles.mMenu}>
             <div className={styles.mHeading}>Menu</div>
             {itrData.map((e) => {
-              if (e.title !== "Certificates" && e.title !== "Contact") {
-                return (
-                  <Link
-                    key={e.id}
-                    to={`${e.link}`}
-                    onClick={() => {
-                      setMenu(false);
-                    }}
-                    className={styles.mItems}
-                  >
-                    <div className={styles.mIcons}>{e.icon}</div>
-                    <div className={styles.mTitle}>{e.title}</div>
-                  </Link>
-                );
-              } else if (e.title === "Certificates") {
+              if (e.title !== "Contact") {
                 return (
                   <Link
                     key={e.id}
@@ -71,7 +61,7 @@ const Pannel = () => {
                     className={styles.mItems}
                   >
                     <div className={styles.mIcons}>
-                      <GiAchievement />
+                      {e.title === "Certificates" ? <GiAchievement /> : e.icon}
                     </div>
                     <div className={styles.mTitle}>{e.title}</div>
                   </Link>
