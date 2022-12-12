@@ -10,6 +10,7 @@
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "@types/react-router-hash-link": "^2.4.5",
     "@types/react-vertical-timeline-component": "^3.3.3",
     "axios": "^1.2.1",
     "react": "^18.2.0",

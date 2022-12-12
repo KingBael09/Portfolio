@@ -24,7 +24,7 @@ const arrZeroR = { borderRight: "7px solid  hsl(0, 66%, 47%)" };
 const Home = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.main}>
+      <div id="#top" className={styles.main}>
         <div className={styles.home}>
           <div className={styles.banner}>
             {"<"}Hello World{">"}
@@ -58,7 +58,9 @@ const Home = () => {
           </span>
         </div>
         <div className={styles.journey}>
-          <div className={styles.heading}>#My Journey</div>
+          <div id="timeline" className={styles.heading}>
+            #My Journey
+          </div>
           <div className={styles.timeline}>
             <VerticalTimeline className={styles.time}>
               <VerticalTimelineElement
@@ -142,3 +144,6 @@ const Home = () => {
 };
 
 export default Home;
+
+
+// TODO: ADD intrest Section

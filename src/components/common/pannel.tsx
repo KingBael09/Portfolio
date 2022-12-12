@@ -10,12 +10,12 @@ import { BsCodeSlash } from "react-icons/bs";
 import { GrCertificate } from "react-icons/gr";
 import { GiAchievement } from "react-icons/gi";
 import styles from "../styles/Pannel.module.css";
-import { Link } from "react-router-dom";
+import { HashLink, NavHashLink } from "react-router-hash-link";
 
 type data = { id: number; title: string; link: string; icon: any }[];
 
 const itrData: data = [
-  { id: 0, title: "Home", link: "/", icon: <AiOutlineHome /> },
+  { id: 0, title: "Home", link: "/#top", icon: <AiOutlineHome /> },
   {
     id: 1,
     title: "Timeline",
@@ -31,7 +31,7 @@ const itrData: data = [
     link: "/certificates",
     icon: <GrCertificate />,
   },
-  { id: 6, title: "Contact", link: "/#footer", icon: <AiOutlineMail /> },
+  { id: 6, title: "Contact", link: "#footer", icon: <AiOutlineMail /> },
 ];
 
 const Pannel = () => {
@@ -50,9 +50,29 @@ const Pannel = () => {
           <div className={styles.mMenu}>
             <div className={styles.mHeading}>Menu</div>
             {itrData.map((e) => {
-              if (e.title !== "Contact") {
+              if (e.title !== "Contact" && e.title !== "Timeline") {
                 return (
-                  <Link
+                  <NavHashLink
+                    key={e.id}
+                    to={`${e.link}`}
+                    onClick={() => {
+                      setMenu(false);
+                    }}
+                    className={({ isActive }) =>
+                      isActive
+                        ? [styles.mItems, styles.mActive].join(" ")
+                        : styles.mItems
+                    }
+                  >
+                    <div className={styles.mIcons}>
+                      {e.title === "Certificates" ? <GiAchievement /> : e.icon}
+                    </div>
+                    <div className={styles.mTitle}>{e.title}</div>
+                  </NavHashLink>
+                );
+              } else {
+                return (
+                  <HashLink
                     key={e.id}
                     to={`${e.link}`}
                     onClick={() => {
@@ -60,28 +80,10 @@ const Pannel = () => {
                     }}
                     className={styles.mItems}
                   >
-                    <div className={styles.mIcons}>
-                      {e.title === "Certificates" ? <GiAchievement /> : e.icon}
-                    </div>
-                    <div className={styles.mTitle}>{e.title}</div>
-                  </Link>
-                );
-              } else if (e.title === "Contact") {
-                return (
-                  <a
-                    key={e.id}
-                    href={`${e.link}`}
-                    onClick={() => {
-                      setMenu(false);
-                    }}
-                    className={styles.mItems}
-                  >
                     <div className={styles.mIcons}>{e.icon}</div>
                     <div className={styles.mTitle}>{e.title}</div>
-                  </a>
+                  </HashLink>
                 );
-              } else {
-                return <></>;
               }
             })}
           </div>
@@ -108,19 +110,31 @@ const Pannel = () => {
       <div className={styles.desktop}>
         <div className={styles.pannel}>
           {itrData.map((e) => {
-            if (e.title !== "Contact") {
+            if (e.title !== "Contact" && e.title !== "Timeline") {
               return (
-                <Link key={e.id} to={`${e.link}`} className={styles.itemSet}>
+                <NavHashLink
+                  key={e.id}
+                  to={`${e.link}`}
+                  className={({ isActive }) =>
+                    isActive
+                      ? [styles.itemSet, styles.active].join(" ")
+                      : styles.itemSet
+                  }
+                >
                   <div className={styles.icons}>{e.icon}</div>
                   <div className={styles.title}>{e.title}</div>
-                </Link>
+                </NavHashLink>
               );
             } else {
               return (
-                <a key={e.id} href={`${e.link}`} className={styles.itemSet}>
+                <HashLink
+                  key={e.id}
+                  to={`${e.link}`}
+                  className={styles.itemSet}
+                >
                   <div className={styles.icons}>{e.icon}</div>
                   <div className={styles.title}>{e.title}</div>
-                </a>
+                </HashLink>
               );
             }
           })}
@@ -131,3 +145,5 @@ const Pannel = () => {
 };
 
 export default Pannel;
+
+// TODO: MAKE Contact option some kind of trigger to a popup

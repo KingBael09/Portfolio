@@ -10,7 +10,7 @@ import styles from "../styles/Footer.module.css";
 
 const Footer = () => {
   return (
-    <div className={styles.container} id="footer">
+    <div className={styles.container}>
       <div className={styles.contact}>
         <a
           target={"_blank"}
@@ -53,7 +53,9 @@ const Footer = () => {
           <AiOutlineTwitter className={styles.icon} />
         </a>
       </div>
-      <div className={styles.base}>© Copyright 2022 All Rights Reserved</div>
+      <div id="footer" className={styles.base}>
+        © Copyright 2022 All Rights Reserved
+      </div>
     </div>
   );
 };

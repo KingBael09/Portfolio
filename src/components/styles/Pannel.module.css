@@ -130,7 +130,7 @@
   backdrop-filter: blur(2px);
   /* background-color: #161b22; */
   /* outline: 1px solid black; */
-  gap: 1rem;
+  /* gap: 1rem; */
 }
 
 .itemSet {
@@ -179,11 +179,19 @@
   opacity: 1;
 }
 
-.itemSet:hover {
-  /* TODO: TEMP */
+.itemSet:hover,
+.mItems:hover {
   background-color: hsl(222, 12%, 34%);
 }
 
 .itemSet:active {
   background-color: hsl(222, 12%, 54%);
+}
+
+.active {
+  background-color: hsl(222, 12%, 30%);
+}
+
+.mActive {
+  background-color: hsl(222, 12%, 40%);
 }
