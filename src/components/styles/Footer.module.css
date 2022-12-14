@@ -16,16 +16,11 @@
   font-size: 2.5rem;
 }
 
-.qLink:hover,
-.qLink:focus,
-.qLink:active {
-  transform: scale(1.5);
-}
-
 .contact {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   margin-top: 3rem;
+  /* width: 100%; */
   /* color: white; */
 }
 
@@ -39,36 +34,40 @@
   .icon {
     font-size: 2rem;
   }
+
+  .contact {
+    gap: 1rem !important;
+  }
 }
 
 .qLink {
-  border-radius: 50%;
-  padding: 5px;
+  border-radius: 50% !important;
+  padding: 10px !important;
+  min-width: auto !important;
   transition: all 0.3s ease-in-out;
 }
 
 .twitter:hover,
-.twitter:focus,
-.twitter:active {
-  background-color: hsl(203, 89%, 53%);
+.twitter:focus {
+  color: hsl(203, 89%, 53%);
 }
+
 .insta:hover,
-.insta:focus,
-.insta:active {
-  background-color: hsl(323, 100%, 50%);
+.insta:focus {
+  color: hsl(323, 100%, 50%);
 }
+
 .github:hover,
-.github:focus,
-.github:active {
-  background-color: hsl(0, 0%, 0%);
+.github:focus {
+  color: hsl(0, 0%, 1000%);
 }
+
 .mail:hover,
-.mail:focus,
-.mail:active {
-  background-color: hsl(5, 88%, 51%);
+.mail:focus {
+  color: hsl(5, 88%, 51%);
 }
+
 .linkedin:hover,
-.linkedin:focus,
-.linkedin:active {
-  background-color: hsl(200, 90%, 50%);
+.linkedin:focus {
+  color: hsl(200, 90%, 50%);
 }

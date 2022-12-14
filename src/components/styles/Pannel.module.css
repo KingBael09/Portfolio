@@ -153,6 +153,7 @@
   flex: 1;
   display: flex;
   justify-content: center;
+  opacity: 1;
   /* color: white; */
 }
 
@@ -168,11 +169,12 @@
 
 .itemSet,
 .icons {
-  transition: transform 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .itemSet:hover .icons {
   transform: translateX(-10vw);
+  opacity: 0;
 }
 .itemSet:hover .title {
   transform: translateX(0);

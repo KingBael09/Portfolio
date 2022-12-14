@@ -11,6 +11,7 @@ import { GrCertificate } from "react-icons/gr";
 import { GiAchievement } from "react-icons/gi";
 import styles from "../styles/Pannel.module.css";
 import { HashLink, NavHashLink } from "react-router-hash-link";
+// import { IconButton } from "@mui/material";
 
 type data = { id: number; title: string; link: string; icon: any }[];
 
