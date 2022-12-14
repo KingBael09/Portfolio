@@ -8,7 +8,7 @@ import {
   AiFillEye,
   // AiOutlineCheck,
 } from "react-icons/ai";
-import { FaClone } from "react-icons/fa";
+import { FaClone, FaGlobe } from "react-icons/fa";
 import failSafe from "../assets/failSafe.json";
 import IconButton from "@mui/material/IconButton";
 import Alert from "@mui/material/Alert";
@@ -75,9 +75,24 @@ const Projects = () => {
                       <div className={styles.name}>
                         <div className={styles.dName}>{e.name}</div>
                       </div>
+
                       <div className={styles.lang}>{e.language}</div>
                     </div>
-
+                    <div className={styles.topics}>
+                      {e.topics.slice(0, 3).map((str: string) => {
+                        if (str.length <= 10) {
+                          return (
+                            <div key={str} className={styles.badge}>
+                              {str}
+                            </div>
+                          );
+                        } else {
+                          return (
+                            <div key={str} className={styles.hidden}></div>
+                          );
+                        }
+                      })}
+                    </div>
                     <div className={styles.desc}>
                       <div className={styles.content}>
                         {!e.description ? (
@@ -88,7 +103,7 @@ const Projects = () => {
                       </div>
                     </div>
                     <div className={styles.stats}>
-                      <span>
+                      <span className={styles.code}>
                         <IconButton
                           href={e.html_url}
                           target="_blank"
@@ -97,7 +112,20 @@ const Projects = () => {
                           {<AiFillGithub className={styles.ico} />}
                         </IconButton>
                       </span>
-                      <span>
+                      {e.homepage ? (
+                        <span className={styles.demo}>
+                          <IconButton
+                            href={e.homepage}
+                            target="_blank"
+                            color="inherit"
+                          >
+                            {<FaGlobe className={styles.ico} />}
+                          </IconButton>
+                        </span>
+                      ) : (
+                        <></>
+                      )}
+                      <span className={styles.clone}>
                         {
                           <IconButton
                             onClick={() => {
@@ -125,29 +153,26 @@ const Projects = () => {
                 );
               } else if (e.name === "__API_FAILED") {
                 return (
-                  <>
-                    <div
-                      key={e.id}
-                      className={[styles.card, styles.failStatus].join(" ")}
-                    >
-                      <div className={[styles.name, styles.fail].join(" ")}>
-                        <div className={styles.dName}>{e.name}</div>
-                      </div>
-                      <div className={styles.failCode}>
-                        <span>
-                          If you Are Seeing this, it means that GITHUB API has
-                          reached its Limit.{" "}
-                          <span className={styles.res}>
-                            Try Again After Sometime
-                          </span>
-                        </span>
-
-                        <span className={styles.fail}>
-                          This is old Backup Record
-                        </span>
-                      </div>
+                  <div
+                    key={e.id}
+                    className={[styles.card, styles.failStatus].join(" ")}
+                  >
+                    <div className={[styles.name, styles.fail].join(" ")}>
+                      <div className={styles.dName}>{e.name}</div>
                     </div>
-                  </>
+                    <div className={styles.failCode}>
+                      <span>
+                        If you Are Seeing this, it means that GITHUB API has
+                        reached its Limit.{" "}
+                        <span className={styles.res}>
+                          Try Again After Sometime
+                        </span>
+                      </span>
+                      <span className={styles.fail}>
+                        This is old Backup Record
+                      </span>
+                    </div>
+                  </div>
                 );
               } else {
                 return <div key={e.id} className={styles.hidden}></div>;
@@ -163,37 +188,3 @@ const Projects = () => {
 export default Projects;
 
 // ?Logic To render Tags of repo
-
-/* <div className={styles.topics}>
-  {e.topics.map((str: string) => {
-    if (str.length <= 10) {
-      return (
-        <div key={str} className={styles.badge}>
-          {str}
-        </div>
-      );
-    } else {
-      return <div key={str} className={styles.hidden}></div>;
-    }
-  })}
-</div>; */
-
-// .badge {
-//   border-radius: 20px;
-//   background-color: hsl(220, 10%, 50%);
-//   padding-inline: 5px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-
-// .topics {
-//   display: grid;
-//   grid-template-columns: repeat(3, 1fr) !important;
-
-//   gap: 5px;
-//   position: absolute;
-//   bottom: 5px;
-//   left: 5px;
-//   right: 5px;
-// }

@@ -1,0 +1,30 @@
+[
+  {
+    "image": "",
+    "name": "C",
+    "level": "Intermediate",
+    "isFav": false,
+    "isLearning": false
+  },
+  {
+    "image": "",
+    "name": "C++",
+    "level": "Intermediate",
+    "isFav": false,
+    "isLearning": false
+  },
+  {
+    "image": "",
+    "name": "JavaScript",
+    "level": "Intermediate",
+    "isFav": true,
+    "isLearning": false
+  },
+  {
+    "image": "",
+    "name": "TypeScript",
+    "level": "Intermediate",
+    "isFav": true,
+    "isLearning": false
+  }
+]

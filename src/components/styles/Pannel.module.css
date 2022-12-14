@@ -78,8 +78,9 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 100%;
   flex-grow: 1;
-  border-radius: 40px;
+  border-radius: 40px !important;
   outline: 1px solid black;
   gap: 1rem;
   overflow: hidden;
@@ -96,21 +97,18 @@
 
 .mIcons {
   font-size: 10rem;
-  /* color: rgba(0, 0, 0, 0.1); */
   position: absolute;
   z-index: 0;
 }
 
-.mItems:nth-child(even) > .mIcons {
+.mItems:nth-child(odd):has(.mIcons) .mIcons {
   right: 2rem;
   color: hsla(195, 73%, 59%, 0.1);
-  /* color: hsl(0, 0%, 70%, 0.2); */
 }
 
-.mItems:nth-child(odd) > .mIcons {
+.mItems:nth-child(even):has(.mIcons) .mIcons {
   left: 2rem;
   color: hsla(0, 79%, 72%, 0.1);
-  /* color: hsl(0, 0%, 70%, 0.2); */
 }
 
 /* Desktop Design */
@@ -141,6 +139,7 @@
   display: flex;
   flex-grow: 1;
   width: 100%;
+  height: 100%;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -185,8 +184,7 @@
   opacity: 1;
 }
 
-.itemSet:hover,
-.mItems:hover {
+.itemSet:hover {
   background-color: hsl(222, 12%, 34%);
 }
 
@@ -196,8 +194,10 @@
 
 .active {
   background-color: hsl(222, 12%, 30%);
+  transition: all 0.3s ease-in-out;
 }
 
 .mActive {
   background-color: hsl(222, 12%, 40%);
+  transition: all 0.3s ease-in-out;
 }

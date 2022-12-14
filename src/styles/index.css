@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -9,6 +10,9 @@ html {
   -webkit-tap-highlight-color: rgb(0, 0, 0, 0.1);
   background-color: hsl(220, 12%, 10%);
   color: white;
+  /* to compensate pageshift */
+  /* Compensated via js change @pannel */
+  /* overflow-y: scroll; */
 }
 
 *,

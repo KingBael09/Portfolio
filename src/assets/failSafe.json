@@ -17,6 +17,7 @@
     "language": "C++",
     "forks_count": 0,
     "forks": 0,
+    "topics": ["c", "cpp", "Algorithms"],
     "watchers": 1
   },
   {
@@ -37,6 +38,7 @@
     "language": "C",
     "forks_count": 0,
     "forks": 0,
+    "topics": ["c", "cpp", "dsa"],
     "watchers": 1
   },
   {
@@ -57,6 +59,7 @@
     "language": null,
     "forks_count": 0,
     "forks": 0,
+    "topics": [],
     "watchers": 0
   },
   {
@@ -77,6 +80,7 @@
     "language": null,
     "forks_count": 0,
     "forks": 0,
+    "topics": [],
     "watchers": 1
   },
   {
@@ -97,6 +101,7 @@
     "language": null,
     "forks_count": 0,
     "forks": 0,
+    "topics": [],
     "watchers": 1
   },
   {
@@ -117,6 +122,7 @@
     "language": "JavaScript",
     "forks_count": 0,
     "forks": 0,
+    "topics": ["react", "demo"],
     "watchers": 0
   },
   {
@@ -137,6 +143,7 @@
     "language": "Python",
     "forks_count": 0,
     "forks": 0,
+    "topics": ["python", "game"],
     "watchers": 1
   },
   {
@@ -150,13 +157,14 @@
     "fork": false,
     "url": "https://api.github.com/repos/KingBael09/Student-Dex",
     "clone_url": "https://github.com/KingBael09/Student-Dex.git",
-    "homepage": "",
+    "homepage": "https://www.example.com",
     "size": 177,
     "stargazers_count": 3,
     "watchers_count": 3,
     "language": "JavaScript",
     "forks_count": 0,
     "forks": 0,
+    "topics": ["nextjs", "expressjs", "mongodb", "nodejs"],
     "watchers": 3
   },
   {
@@ -177,6 +185,7 @@
     "language": "APIFAILED",
     "forks_count": "--",
     "forks": "-",
+    "topics": [],
     "watchers": 1
   }
 ]

@@ -1,0 +1,84 @@
+@media (min-width: 850px) {
+  .container {
+    min-height: 100vh;
+  }
+
+  .skill {
+    grid-template-columns: repeat(2, 1fr) !important;
+    padding: 1rem;
+  }
+
+  .main {
+    width: 87vw;
+  }
+
+  .card:hover {
+    box-shadow: -10px -10px hsl(220, 12%, 20%);
+    transform: translate3d(10px, 10px, 10px);
+    background-color: hsl(220, 12%, 35%);
+  }
+
+  .card:hover .desc {
+    background-color: hsl(220, 12%, 25%);
+  }
+}
+
+@media (min-width: 1265px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .main {
+    width: 87vw;
+  }
+
+  .skill {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .heading {
+    font-size: 6rem !important;
+
+    margin-block: 0 !important;
+    margin-bottom: 2rem !important;
+    text-shadow: 3px 3px 0 hsl(0, 0%, 0%), 6px 6px 0 hsl(0, 0%, 0%),
+      9px 9px hsl(0, 0%, 0%);
+  }
+}
+
+.skill {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(1, 1fr);
+  width: 100%;
+}
+
+.main {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading {
+  font-size: 3rem;
+  font-family: "Jetbrains Mono", monospace;
+  margin-block: 1rem;
+  width: 100%;
+}
+
+.card {
+  background-color: hsl(220, 12%, 30%);
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  padding: 10px 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}

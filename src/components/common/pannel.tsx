@@ -13,6 +13,7 @@ import styles from "../styles/Pannel.module.css";
 import { HashLink, NavHashLink } from "react-router-hash-link";
 import Button from "@mui/material/Button";
 import Fade from "@mui/material/Fade";
+import ButtonBase from "@mui/material/ButtonBase";
 
 type data = { id: number; title: string; link: string; icon: any }[];
 
@@ -41,20 +42,21 @@ const Pannel = () => {
 
   const showMenu = () => {
     if (Menu === false) {
-      // enable scrolling when not in menu
-      document.body.style.overflow = "auto";
-      return <></>;
+      // enable scrolling when not in menu also Compensates pageshift
+      document.body.style.overflowY = "scroll";
     } else {
       // stop scrolling when in menu
-      document.body.style.overflow = "hidden";
-      return (
-        <Fade in={Menu}>
-          <div>
-            <div className={styles.mMenu}>
-              <div className={styles.mHeading}>Menu</div>
-              {itrData.map((e) => {
-                if (e.title !== "Contact" && e.title !== "Timeline") {
-                  return (
+      document.body.style.overflowY = "hidden";
+    }
+    return (
+      <Fade in={Menu}>
+        <div>
+          <div className={styles.mMenu}>
+            <div className={styles.mHeading}>Menu</div>
+            {itrData.map((e) => {
+              if (e.title !== "Contact" && e.title !== "Timeline") {
+                return (
+                  <ButtonBase color="inherit" className={styles.mItems}>
                     <NavHashLink
                       key={e.id}
                       to={`${e.link}`}
@@ -76,9 +78,11 @@ const Pannel = () => {
                       </div>
                       <div className={styles.mTitle}>{e.title}</div>
                     </NavHashLink>
-                  );
-                } else {
-                  return (
+                  </ButtonBase>
+                );
+              } else {
+                return (
+                  <ButtonBase color="inherit" className={styles.mItems}>
                     <HashLink
                       key={e.id}
                       to={`${e.link}`}
@@ -90,14 +94,15 @@ const Pannel = () => {
                       <div className={styles.mIcons}>{e.icon}</div>
                       <div className={styles.mTitle}>{e.title}</div>
                     </HashLink>
-                  );
-                }
-              })}
-            </div>
+                  </ButtonBase>
+                );
+              }
+            })}
           </div>
-        </Fade>
-      );
-    }
+        </div>
+      </Fade>
+    );
+    // }
   };
 
   return (
@@ -122,29 +127,33 @@ const Pannel = () => {
           {itrData.map((e) => {
             if (e.title !== "Contact" && e.title !== "Timeline") {
               return (
-                <NavHashLink
-                  key={e.id}
-                  to={`${e.link}`}
-                  className={({ isActive }) =>
-                    isActive
-                      ? [styles.itemSet, styles.active].join(" ")
-                      : styles.itemSet
-                  }
-                >
-                  <div className={styles.icons}>{e.icon}</div>
-                  <div className={styles.title}>{e.title}</div>
-                </NavHashLink>
+                <ButtonBase color="inherit" className={styles.itemSet}>
+                  <NavHashLink
+                    key={e.id}
+                    to={`${e.link}`}
+                    className={({ isActive }) =>
+                      isActive
+                        ? [styles.itemSet, styles.active].join(" ")
+                        : styles.itemSet
+                    }
+                  >
+                    <div className={styles.icons}>{e.icon}</div>
+                    <div className={styles.title}>{e.title}</div>
+                  </NavHashLink>
+                </ButtonBase>
               );
             } else {
               return (
-                <HashLink
-                  key={e.id}
-                  to={`${e.link}`}
-                  className={styles.itemSet}
-                >
-                  <div className={styles.icons}>{e.icon}</div>
-                  <div className={styles.title}>{e.title}</div>
-                </HashLink>
+                <ButtonBase color="inherit" className={styles.itemSet}>
+                  <HashLink
+                    key={e.id}
+                    to={`${e.link}`}
+                    className={styles.itemSet}
+                  >
+                    <div className={styles.icons}>{e.icon}</div>
+                    <div className={styles.title}>{e.title}</div>
+                  </HashLink>
+                </ButtonBase>
               );
             }
           })}
