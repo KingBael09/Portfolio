@@ -11,7 +11,8 @@ import { GrCertificate } from "react-icons/gr";
 import { GiAchievement } from "react-icons/gi";
 import styles from "../styles/Pannel.module.css";
 import { HashLink, NavHashLink } from "react-router-hash-link";
-// import { IconButton } from "@mui/material";
+import Button from "@mui/material/Button";
+import Fade from "@mui/material/Fade";
 
 type data = { id: number; title: string; link: string; icon: any }[];
 
@@ -47,48 +48,54 @@ const Pannel = () => {
       // stop scrolling when in menu
       document.body.style.overflow = "hidden";
       return (
-        <div>
-          <div className={styles.mMenu}>
-            <div className={styles.mHeading}>Menu</div>
-            {itrData.map((e) => {
-              if (e.title !== "Contact" && e.title !== "Timeline") {
-                return (
-                  <NavHashLink
-                    key={e.id}
-                    to={`${e.link}`}
-                    onClick={() => {
-                      setMenu(false);
-                    }}
-                    className={({ isActive }) =>
-                      isActive
-                        ? [styles.mItems, styles.mActive].join(" ")
-                        : styles.mItems
-                    }
-                  >
-                    <div className={styles.mIcons}>
-                      {e.title === "Certificates" ? <GiAchievement /> : e.icon}
-                    </div>
-                    <div className={styles.mTitle}>{e.title}</div>
-                  </NavHashLink>
-                );
-              } else {
-                return (
-                  <HashLink
-                    key={e.id}
-                    to={`${e.link}`}
-                    onClick={() => {
-                      setMenu(false);
-                    }}
-                    className={styles.mItems}
-                  >
-                    <div className={styles.mIcons}>{e.icon}</div>
-                    <div className={styles.mTitle}>{e.title}</div>
-                  </HashLink>
-                );
-              }
-            })}
+        <Fade in={Menu}>
+          <div>
+            <div className={styles.mMenu}>
+              <div className={styles.mHeading}>Menu</div>
+              {itrData.map((e) => {
+                if (e.title !== "Contact" && e.title !== "Timeline") {
+                  return (
+                    <NavHashLink
+                      key={e.id}
+                      to={`${e.link}`}
+                      onClick={() => {
+                        setMenu(false);
+                      }}
+                      className={({ isActive }) =>
+                        isActive
+                          ? [styles.mItems, styles.mActive].join(" ")
+                          : styles.mItems
+                      }
+                    >
+                      <div className={styles.mIcons}>
+                        {e.title === "Certificates" ? (
+                          <GiAchievement />
+                        ) : (
+                          e.icon
+                        )}
+                      </div>
+                      <div className={styles.mTitle}>{e.title}</div>
+                    </NavHashLink>
+                  );
+                } else {
+                  return (
+                    <HashLink
+                      key={e.id}
+                      to={`${e.link}`}
+                      onClick={() => {
+                        setMenu(false);
+                      }}
+                      className={styles.mItems}
+                    >
+                      <div className={styles.mIcons}>{e.icon}</div>
+                      <div className={styles.mTitle}>{e.title}</div>
+                    </HashLink>
+                  );
+                }
+              })}
+            </div>
           </div>
-        </div>
+        </Fade>
       );
     }
   };
@@ -96,7 +103,9 @@ const Pannel = () => {
   return (
     <div className={styles.container}>
       <div className={styles.mobile}>
-        <button
+        <Button
+          color="inherit"
+          variant="text"
           onClick={() => {
             Menu ? setMenu(false) : setMenu(true);
           }}
@@ -105,7 +114,7 @@ const Pannel = () => {
           <div className={styles.span}> </div>
           <div className={styles.span}> </div>
           <div className={styles.span}> </div>
-        </button>
+        </Button>
         {showMenu()}
       </div>
       <div className={styles.desktop}>
