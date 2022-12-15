@@ -14,6 +14,8 @@ import { HashLink, NavHashLink } from "react-router-hash-link";
 import Button from "@mui/material/Button";
 import Fade from "@mui/material/Fade";
 import ButtonBase from "@mui/material/ButtonBase";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 
 type data = { id: number; title: string; link: string; icon: any }[];
 
@@ -56,9 +58,12 @@ const Pannel = () => {
             {itrData.map((e) => {
               if (e.title !== "Contact" && e.title !== "Timeline") {
                 return (
-                  <ButtonBase color="inherit" className={styles.mItems}>
+                  <ButtonBase
+                    key={e.id}
+                    color="inherit"
+                    className={styles.mItems}
+                  >
                     <NavHashLink
-                      key={e.id}
                       to={`${e.link}`}
                       onClick={() => {
                         setMenu(false);
@@ -82,9 +87,12 @@ const Pannel = () => {
                 );
               } else {
                 return (
-                  <ButtonBase color="inherit" className={styles.mItems}>
+                  <ButtonBase
+                    key={e.id}
+                    color="inherit"
+                    className={styles.mItems}
+                  >
                     <HashLink
-                      key={e.id}
                       to={`${e.link}`}
                       onClick={() => {
                         setMenu(false);
@@ -115,10 +123,13 @@ const Pannel = () => {
             Menu ? setMenu(false) : setMenu(true);
           }}
           className={styles.button}
+          // TODO: Add Icon Change in Menu State
         >
-          <div className={styles.span}> </div>
-          <div className={styles.span}> </div>
-          <div className={styles.span}> </div>
+          {Menu ? (
+            <CloseIcon fontSize="large" />
+          ) : (
+            <MenuIcon fontSize="large" />
+          )}
         </Button>
         {showMenu()}
       </div>
@@ -127,9 +138,12 @@ const Pannel = () => {
           {itrData.map((e) => {
             if (e.title !== "Contact" && e.title !== "Timeline") {
               return (
-                <ButtonBase color="inherit" className={styles.itemSet}>
+                <ButtonBase
+                  key={e.id}
+                  color="inherit"
+                  className={styles.itemSet}
+                >
                   <NavHashLink
-                    key={e.id}
                     to={`${e.link}`}
                     className={({ isActive }) =>
                       isActive
@@ -144,12 +158,12 @@ const Pannel = () => {
               );
             } else {
               return (
-                <ButtonBase color="inherit" className={styles.itemSet}>
-                  <HashLink
-                    key={e.id}
-                    to={`${e.link}`}
-                    className={styles.itemSet}
-                  >
+                <ButtonBase
+                  key={e.id}
+                  color="inherit"
+                  className={styles.itemSet}
+                >
+                  <HashLink to={`${e.link}`} className={styles.itemSet}>
                     <div className={styles.icons}>{e.icon}</div>
                     <div className={styles.title}>{e.title}</div>
                   </HashLink>

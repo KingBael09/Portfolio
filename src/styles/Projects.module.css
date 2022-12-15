@@ -59,6 +59,9 @@
     opacity: 1;
     visibility: visible;
   }
+  .badge:hover{
+    background-color: hsl(220, 12%, 30%);
+  }
 }
 
 @media (min-width: 1265px) {
@@ -101,7 +104,6 @@
 
 .proj {
   display: grid;
-  /* gap: 1rem; */
   gap: 2rem;
   grid-template-columns: repeat(1, 1fr);
   width: 100%;
@@ -127,7 +129,8 @@
   display: flex;
   flex-direction: column;
   border-radius: 20px;
-  padding: 10px 1rem;
+  /* padding: 10px 1rem; */
+  overflow: hidden;
   transition: all 0.3s ease-in-out;
 }
 
@@ -283,4 +286,11 @@
 .clone,
 .demo {
   position: relative;
+}
+
+.touch {
+  flex-direction: column;
+  align-items: stretch !important;
+  padding: 10px 1rem !important;
+  cursor: default !important;
 }

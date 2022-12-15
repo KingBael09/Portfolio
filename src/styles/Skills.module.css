@@ -17,10 +17,6 @@
     transform: translate3d(10px, 10px, 10px);
     background-color: hsl(220, 12%, 35%);
   }
-
-  .card:hover .desc {
-    background-color: hsl(220, 12%, 25%);
-  }
 }
 
 @media (min-width: 1265px) {
@@ -73,12 +69,24 @@
   display: flex;
   flex-direction: column;
   border-radius: 20px;
-  padding: 10px 1rem;
+  /* padding: 10px 1rem; */
+  overflow: hidden;
   transition: all 0.3s ease-in-out;
 }
 
-.cardTop {
+.hidden {
+  display: none;
+}
+
+/* .cardTop {
   display: flex;
   align-items: center;
   width: 100%;
+} */
+
+.touch {
+  flex-direction: column;
+  align-items: stretch !important;
+  padding: 10px 1rem !important;
+  cursor: default !important;
 }
