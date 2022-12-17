@@ -8,8 +8,8 @@ import failSafe from "../assets/failSafe.json";
 import IconButton from "@mui/material/IconButton";
 import Alert from "@mui/material/Alert";
 import Slide from "@mui/material/Slide";
-import CircularProgress from "@mui/material/CircularProgress";
 import ButtonBase from "@mui/material/ButtonBase";
+import Loader from "../components/common/loader";
 
 // const url: string = "https://api.github.com/users/KingBael09/repos";
 // const url: string = "https://animechan.vercel.app/api/random";
@@ -41,11 +41,7 @@ const Projects = () => {
   }, []);
 
   if (loading) {
-    return (
-      <div className={styles.loading}>
-        <CircularProgress size={60} thickness={8} color="inherit" />
-      </div>
-    );
+    return <Loader />;
   } else {
     return (
       <div className={styles.container}>
@@ -61,7 +57,7 @@ const Projects = () => {
               Url Coppied!
             </Alert>
           </Slide>
-          <div className={styles.heading}>Projects</div>
+          <div className={styles.heading}>#Projects</div>
           <div className={styles.proj}>
             {data.map((e: any) => {
               if (e.language && e.name !== "__API_FAILED") {
@@ -70,9 +66,8 @@ const Projects = () => {
                     <ButtonBase
                       className={styles.touch}
                       disableRipple={viewportWidth >= 850 ? false : true}
-                      href="#"
                       color="inherit"
-                      LinkComponent={"div"}
+                      component={"div"}
                     >
                       <div className={styles.cardTop}>
                         <div className={styles.name}>
@@ -127,9 +122,7 @@ const Projects = () => {
                               {<FaGlobe className={styles.ico} />}
                             </IconButton>
                           </span>
-                        ) : (
-                          <></>
-                        )}
+                        ) : null}
                         <span className={styles.clone}>
                           {
                             <IconButton
@@ -181,7 +174,7 @@ const Projects = () => {
                   </div>
                 );
               } else {
-                return <div key={e.id} className={styles.hidden}></div>;
+                return null;
               }
             })}
           </div>

@@ -9,6 +9,7 @@ import Home from "./pages/home";
 import Projects from "./pages/projects";
 import Skills from "./pages/skills";
 import About from "./pages/about";
+import Certificates from "./pages/certificates";
 import NotFound from "./pages/notFound";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/about" element={<About />} />
+          <Route path="/certificates" element={<Certificates />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

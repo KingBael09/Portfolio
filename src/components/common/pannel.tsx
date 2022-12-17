@@ -1,43 +1,11 @@
 import React, { useState } from "react";
-import {
-  AiOutlineHome,
-  AiOutlineInfoCircle,
-  AiOutlineMail,
-  AiOutlineClockCircle,
-  AiOutlineBulb,
-} from "react-icons/ai";
-import { BsCodeSlash } from "react-icons/bs";
-import { GrCertificate } from "react-icons/gr";
-import { GiAchievement } from "react-icons/gi";
 import styles from "../styles/Pannel.module.css";
+import { GiAchievement } from "react-icons/gi";
 import { HashLink, NavHashLink } from "react-router-hash-link";
-import Button from "@mui/material/Button";
-import Fade from "@mui/material/Fade";
-import ButtonBase from "@mui/material/ButtonBase";
+import { Button, Fade, ButtonBase } from "@mui/material/";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-
-type data = { id: number; title: string; link: string; icon: any }[];
-
-const itrData: data = [
-  { id: 0, title: "Home", link: "/#top", icon: <AiOutlineHome /> },
-  {
-    id: 1,
-    title: "Timeline",
-    link: "/#timeline",
-    icon: <AiOutlineClockCircle />,
-  },
-  { id: 2, title: "Projects", link: "/projects", icon: <AiOutlineBulb /> },
-  { id: 3, title: "Skills", link: "/skills", icon: <BsCodeSlash /> },
-  { id: 4, title: "About", link: "/about", icon: <AiOutlineInfoCircle /> },
-  {
-    id: 5,
-    title: "Certificates",
-    link: "/certificates",
-    icon: <GrCertificate />,
-  },
-  { id: 6, title: "Contact", link: "#footer", icon: <AiOutlineMail /> },
-];
+import itrData from "../../Data/pannelData";
 
 const Pannel = () => {
   const [Menu, setMenu] = useState(false);
@@ -110,7 +78,6 @@ const Pannel = () => {
         </div>
       </Fade>
     );
-    // }
   };
 
   return (
@@ -123,7 +90,6 @@ const Pannel = () => {
             Menu ? setMenu(false) : setMenu(true);
           }}
           className={styles.button}
-          // TODO: Add Icon Change in Menu State
         >
           {Menu ? (
             <CloseIcon fontSize="large" />
@@ -141,6 +107,7 @@ const Pannel = () => {
                 <ButtonBase
                   key={e.id}
                   color="inherit"
+                  component={"div"}
                   className={styles.itemSet}
                 >
                   <NavHashLink
@@ -161,6 +128,7 @@ const Pannel = () => {
                 <ButtonBase
                   key={e.id}
                   color="inherit"
+                  component={"div"}
                   className={styles.itemSet}
                 >
                   <HashLink to={`${e.link}`} className={styles.itemSet}>

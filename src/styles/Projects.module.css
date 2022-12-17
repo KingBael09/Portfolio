@@ -90,16 +90,6 @@
   }
 }
 
-.loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  min-height: 100vh;
-}
 
 .proj {
   display: grid;
@@ -292,4 +282,5 @@
   align-items: stretch !important;
   padding: 10px 1rem !important;
   cursor: default !important;
+  flex: 1;
 }

@@ -1,0 +1,47 @@
+@media (min-width: 850px) {
+  .oops {
+    font-size: 10rem !important;
+  }
+  .msg{
+    font-size: 2rem !important;
+  }
+}
+
+.main {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.container {
+  position: fixed;
+  inset: 0;
+  background-color: hsl(220, 12%, 10%);
+  z-index: 99;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.oops {
+  font-size: 6rem;
+  font-weight: 900;
+  color: hsl(195, 73%, 59%);
+}
+
+.msg {
+  font-size: min(1.1rem,5vw);
+}
+
+.button{
+    font-size: 2rem !important;
+    color: hsl(0, 89%, 66%) !important;
+    font-weight: 900 !important;
+    padding: 1rem 3rem !important;
+    border-radius: 30px !important;
+    margin-top: 10vh !important;
+}
