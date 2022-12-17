@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../styles/Skills.module.css";
 import ButtonBase from "@mui/material/ButtonBase";
-import _skills from "../Data/skillsData";
+import _skills from "../data/skillsData";
 
 const Skills = () => {
   const viewportWidth = window.innerWidth;

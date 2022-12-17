@@ -5,7 +5,7 @@ import { HashLink, NavHashLink } from "react-router-hash-link";
 import { Button, Fade, ButtonBase } from "@mui/material/";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import itrData from "../../Data/pannelData";
+import itrData from "../../data/pannelData";
 
 const Pannel = () => {
   const [Menu, setMenu] = useState(false);

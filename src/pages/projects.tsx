@@ -4,7 +4,7 @@ import styles from "../styles/Projects.module.css";
 import axios from "axios";
 import { AiFillGithub, AiOutlineFork, AiFillEye } from "react-icons/ai";
 import { FaClone, FaGlobe } from "react-icons/fa";
-import failSafe from "../assets/failSafe.json";
+import failSafe from "../data/failSafe";
 import IconButton from "@mui/material/IconButton";
 import Alert from "@mui/material/Alert";
 import Slide from "@mui/material/Slide";
