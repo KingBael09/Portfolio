@@ -3,11 +3,35 @@
   .desktop {
     display: none;
   }
+  .diagButton {
+    display: none !important;
+  }
+  .paper {
+    margin: 1rem !important;
+    width: 100% !important;
+    padding: 0.5rem !important;
+    height: 20vh;
+  }
+  .dialogContent {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dialogContent > div {
+    flex: 1;
+  }
+  .dialogContent > div > a {
+    padding: 0 !important;
+    width: 100%;
+  }
 }
 
 @media (min-width: 850px) {
   .mobile {
     display: none;
+  }
+  .dialogContent {
+    margin: 2rem !important;
   }
 }
 
@@ -188,4 +212,40 @@
 .mActive {
   background-color: hsl(222, 12%, 40%);
   transition: all 0.3s ease-in-out;
+}
+
+.dialog {
+  backdrop-filter: blur(3px);
+  user-select: none;
+}
+
+.paper {
+  background-color: hsl(222, 12%, 20%) !important;
+  padding: 1rem;
+  color: white !important;
+  border-radius: 20px !important;
+}
+
+.dialogActions {
+  color: black !important;
+}
+
+.dialogTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem !important ;
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 700 !important;
+  color: hsl(195, 73%, 59%) !important;
+}
+
+.dialogContent {
+  padding: 0 !important;
+}
+
+.diagButton {
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  font-family: "Poppins", sans-serif !important;
 }

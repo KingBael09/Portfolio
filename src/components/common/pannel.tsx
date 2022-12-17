@@ -2,21 +2,45 @@ import React, { useState } from "react";
 import styles from "../styles/Pannel.module.css";
 import { GiAchievement } from "react-icons/gi";
 import { HashLink, NavHashLink } from "react-router-hash-link";
-import { Button, Fade, ButtonBase } from "@mui/material/";
+import {
+  Button,
+  Fade,
+  ButtonBase,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+} from "@mui/material/";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import itrData from "../../data/pannelData";
+import Contact from "./contact";
 
 const Pannel = () => {
   const [Menu, setMenu] = useState(false);
+  const [dialogStatus, setdialogStatus] = useState(false);
+  const isMobile = window.matchMedia("(any-pointer:coarse)").matches;
+
+  const handleOnClose = () => {
+    setdialogStatus(false);
+  };
+  const handleOnOpen = () => {
+    setdialogStatus(true);
+  };
 
   const showMenu = () => {
-    if (Menu === false) {
+    if (Menu) {
+      // stop scrolling when in menu or in
+      document.body.style.overflowY = "hidden";
+    } else {
       // enable scrolling when not in menu also Compensates pageshift
       document.body.style.overflowY = "scroll";
-    } else {
-      // stop scrolling when in menu
-      document.body.style.overflowY = "hidden";
+      if (isMobile) {
+        // if Mobile then diable scroll when dialog Open
+        if (dialogStatus) {
+          document.body.style.overflowY = "hidden";
+        }
+      }
     }
     return (
       <Fade in={Menu}>
@@ -29,6 +53,7 @@ const Pannel = () => {
                   <ButtonBase
                     key={e.id}
                     color="inherit"
+                    component={"div"}
                     className={styles.mItems}
                   >
                     <NavHashLink
@@ -53,11 +78,12 @@ const Pannel = () => {
                     </NavHashLink>
                   </ButtonBase>
                 );
-              } else {
+              } else if (e.title === "Timeline") {
                 return (
                   <ButtonBase
                     key={e.id}
                     color="inherit"
+                    component={"div"}
                     className={styles.mItems}
                   >
                     <HashLink
@@ -72,6 +98,26 @@ const Pannel = () => {
                     </HashLink>
                   </ButtonBase>
                 );
+              } else {
+                return (
+                  <ButtonBase
+                    key={e.id}
+                    color="inherit"
+                    component={"div"}
+                    className={styles.mItems}
+                  >
+                    <div
+                      onClick={() => {
+                        setMenu(false);
+                        handleOnOpen();
+                      }}
+                      className={styles.mItems}
+                    >
+                      <div className={styles.mIcons}>{e.icon}</div>
+                      <div className={styles.mTitle}>{e.title}</div>
+                    </div>
+                  </ButtonBase>
+                );
               }
             })}
           </div>
@@ -82,6 +128,36 @@ const Pannel = () => {
 
   return (
     <div className={styles.container}>
+      {/* TODO : Mobile Dialog Not Optimized */}
+      <Dialog
+        className={styles.dialog}
+        onClose={handleOnClose}
+        open={dialogStatus}
+        fullWidth
+        keepMounted
+        disableScrollLock
+        disablePortal
+        hideBackdrop={isMobile?true:false}
+        PaperProps={{
+          className: styles.paper,
+        }}
+      >
+        <DialogTitle className={styles.dialogTitle}>Contact Me!</DialogTitle>
+        <DialogContent className={styles.dialogContent}>
+          <Contact />
+        </DialogContent>
+        <DialogActions className={styles.dialogActions}>
+          <Button
+            variant="contained"
+            color="inherit"
+            fullWidth
+            className={styles.diagButton}
+            onClick={handleOnClose}
+          >
+            Close
+          </Button>
+        </DialogActions>
+      </Dialog>
       <div className={styles.mobile}>
         <Button
           color="inherit"
@@ -100,7 +176,7 @@ const Pannel = () => {
         {showMenu()}
       </div>
       <div className={styles.desktop}>
-        <div className={styles.pannel}>
+        <div id="desktopPannel" className={styles.pannel}>
           {itrData.map((e) => {
             if (e.title !== "Contact" && e.title !== "Timeline") {
               return (
@@ -123,7 +199,7 @@ const Pannel = () => {
                   </NavHashLink>
                 </ButtonBase>
               );
-            } else {
+            } else if (e.title === "Timeline") {
               return (
                 <ButtonBase
                   key={e.id}
@@ -137,6 +213,21 @@ const Pannel = () => {
                   </HashLink>
                 </ButtonBase>
               );
+            } else {
+              return (
+                <ButtonBase
+                  key={e.id}
+                  color="inherit"
+                  component={"div"}
+                  className={styles.itemSet}
+                  onClick={handleOnOpen}
+                >
+                  <div className={styles.itemSet}>
+                    <div className={styles.icons}>{e.icon}</div>
+                    <div className={styles.title}>{e.title}</div>
+                  </div>
+                </ButtonBase>
+              );
             }
           })}
         </div>
@@ -146,5 +237,3 @@ const Pannel = () => {
 };
 
 export default Pannel;
-
-// TODO: MAKE Contact option some kind of trigger to a popup

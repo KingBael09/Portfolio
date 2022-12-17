@@ -60,3 +60,9 @@ a {
   border: 5px solid hsl(222, 12%, 10%);
   background-color: hsl(222, 12%, 24%);
 }
+
+::selection {
+  background-color: white;
+  color: black;
+  text-shadow: none;
+}

@@ -1,0 +1,41 @@
+@media (min-width: 850px) {
+  .msg {
+    font-size: 4rem !important;
+  }
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  user-select: none;
+}
+.loader {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.msg {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 2rem;
+    font-weight: 600;
+    top: 65%;
+}
+
+.img {
+  /* background-image: url("https://cdn.dribbble.com/users/1791559/screenshots/4465351/media/af9126c676894e277b22d4690eceb5b1.gif"); */
+  background-image: url("/src/assets/work\ in\ progress.gif");
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  mix-blend-mode: color-burn;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
