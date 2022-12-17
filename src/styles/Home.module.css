@@ -9,16 +9,12 @@
 
   .home {
     height: 98vh !important;
-    /* align-items: flex-start !important; */
-    /* justify-content: flex-start !important; */
     gap: 2rem;
-    /* background-color: lightgreen; */
     padding: 2rem;
   }
 
   .banner {
     font-size: 4vw !important;
-    /* margin-top: 20vh !important; */
   }
 
   .info {
@@ -49,12 +45,13 @@
     text-shadow: 3px 3px 0 hsl(0, 0%, 0%), 6px 6px 0 hsl(0, 0%, 0%),
       9px 9px hsl(0, 0%, 0%);
   }
-  .heading{
+
+  .heading {
     font-size: 6rem !important;
     width: 100%;
     padding-left: 3rem;
     text-shadow: 3px 3px 0 hsl(0, 0%, 0%), 6px 6px 0 hsl(0, 0%, 0%),
-    9px 9px hsl(0, 0%, 0%);
+      9px 9px hsl(0, 0%, 0%);
   }
 }
 
@@ -71,7 +68,6 @@
   font-family: "Jetbrains Mono", monospace;
   font-size: 3rem;
   font-weight: 900;
-  /* color: white; */
 }
 
 .info {
@@ -103,18 +99,18 @@
   bottom: 15%;
   font-size: 2rem;
   font-weight: 500;
-  /* display: flex;
-  gap: 10px;
-  padding: 1rem; */
 }
 
 .arrow {
   position: absolute;
   bottom: 1rem;
-  background-image: url("../assets/down.svg");
   background-repeat: no-repeat;
   font-size: 2rem;
   animation: blink 0.5s ease 0s infinite alternate;
+  transition: all 0.3s ease-in-out;
+}
+
+.arrow > * {
   transition: all 0.3s ease-in-out;
 }
 
@@ -130,43 +126,18 @@
 
 .timeline {
   padding: 2rem;
+  width: 100%;
 }
 
-.intIcon {
-  color: black;
-  background-color: hsl(0, 0%, 100%);
-  outline: 2px solid black;
-}
-
-.altIcon {
-  color: black;
-  background-color: hsl(195, 73%, 59%);
-}
-
-.finalIcon {
-  background-color: hsl(0, 89%, 66%);
-  color: black;
-}
-
-.date {
-  color: white;
-}
-
-.journey{
+.journey {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.heading{
+.heading {
   font-size: 3rem;
   font-family: "Jetbrains Mono", monospace;
-  /* width: 100%; */
   margin: 4rem 1rem;
 }
-
-.timeline{
-  width: 100%;
-}
-

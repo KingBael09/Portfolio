@@ -25,6 +25,7 @@
   .desc {
     min-height: 17vh !important;
   }
+
   .dName {
     font-size: 2rem !important;
   }
@@ -32,9 +33,11 @@
   .code::after {
     content: "Source";
   }
+
   .clone::after {
     content: "Clone";
   }
+
   .demo::after {
     content: "Visit";
   }
@@ -59,7 +62,8 @@
     opacity: 1;
     visibility: visible;
   }
-  .badge:hover{
+
+  .badge:hover {
     background-color: hsl(220, 12%, 30%);
   }
 }
@@ -79,8 +83,6 @@
 
   .heading {
     font-size: 6rem !important;
-    /* width: 100%; */
-    /* padding-left: 3rem; */
     margin-block: 0 !important;
     margin-bottom: 2rem !important;
     text-shadow: 3px 3px 0 hsl(0, 0%, 0%), 6px 6px 0 hsl(0, 0%, 0%),
@@ -96,9 +98,6 @@
   top: 0;
   left: 0;
   right: 0;
-  /* right: 0;
-  
-  bottom: 0; */
   min-height: 100vh;
 }
 
@@ -163,12 +162,12 @@
 .icoButton {
   transition: all 0.3s ease-in-out;
 }
+
 .icoButton:hover {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
 .desc {
-  /* background-color: hsl(220, 12%, 20%); */
   border-radius: 20px;
   padding: 10px 1rem;
   margin: 5px 0;
@@ -178,7 +177,6 @@
   display: flex;
   flex-direction: column;
   transition: all 0.4s ease-in-out;
-  /* position: relative; */
   font-weight: 600;
 }
 
@@ -256,6 +254,7 @@
 .fail {
   color: hsl(0, 89%, 66%);
 }
+
 .res {
   color: hsl(195, 73%, 59%);
 }

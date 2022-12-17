@@ -21,9 +21,16 @@ type data = {
   name: string;
   image: any;
   level: string;
-  intNode: any;
+  intNode: intData;
   type: string | null;
   isFav: boolean;
+  isLearning: boolean;
+}[];
+
+type intData = {
+  name: string;
+  image: any;
+  level: string;
   isLearning: boolean;
 }[];
 

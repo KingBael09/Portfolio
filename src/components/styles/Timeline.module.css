@@ -1,0 +1,19 @@
+.intIcon {
+  color: black;
+  background-color: hsl(0, 0%, 100%);
+  outline: 2px solid black;
+}
+
+.altIcon {
+  color: black;
+  background-color: hsl(195, 73%, 59%);
+}
+
+.finalIcon {
+  background-color: hsl(0, 89%, 66%);
+  color: black;
+}
+
+.date {
+  color: white;
+}

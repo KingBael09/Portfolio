@@ -9,7 +9,6 @@
 .base {
   user-select: none;
   padding: 1rem 0;
-  /* color: white; */
 }
 
 .icon {
@@ -20,8 +19,6 @@
   display: flex;
   gap: 2rem;
   margin-top: 3rem;
-  /* width: 100%; */
-  /* color: white; */
 }
 
 .minor {
