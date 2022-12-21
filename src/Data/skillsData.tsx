@@ -19,7 +19,7 @@ import {
 
 type data = {
   name: string;
-  image: any;
+  icon: JSX.Element;
   level: string;
   intNode: intData;
   type: string | null;
@@ -27,9 +27,12 @@ type data = {
   isLearning: boolean;
 }[];
 
+// TODO: Learn difference between interface and type
+// TODO: Try dynamic prop passing in icon TS
+
 type intData = {
   name: string;
-  image: any;
+  icon: JSX.Element | null;
   level: string;
   isLearning: boolean;
 }[];
@@ -37,7 +40,7 @@ type intData = {
 const _defSkill: data = [
   {
     name: "C",
-    image: <SiC style={{ color: "#fff" }} />,
+    icon: <SiC style={{ color: "#fff" }} />,
     level: "Intermediate",
     intNode: [],
     type: "Language",
@@ -46,7 +49,7 @@ const _defSkill: data = [
   },
   {
     name: "C++",
-    image: <SiCplusplus style={{ color: "#0086d4" }} />,
+    icon: <SiCplusplus style={{ color: "#0086d4" }} />,
     level: "Intermediate",
     intNode: [],
     type: "Language",
@@ -56,7 +59,7 @@ const _defSkill: data = [
 
   {
     name: "HTML",
-    image: <SiHtml5 style={{ color: "#ff6d00" }} />,
+    icon: <SiHtml5 style={{ color: "#ff6d00" }} />,
     level: "Expert",
     intNode: [],
     type: null,
@@ -65,12 +68,12 @@ const _defSkill: data = [
   },
   {
     name: "CSS",
-    image: <SiCss3 style={{ color: "#2196f3" }} />,
+    icon: <SiCss3 style={{ color: "#2196f3" }} />,
     level: "Expert",
     intNode: [
       {
         name: "BootStrap",
-        image: <SiBootstrap style={{ color: "#7634fa" }} />,
+        icon: <SiBootstrap style={{ color: "#7634fa" }} />,
         level: "Intermediate",
         isLearning: false,
       },
@@ -81,12 +84,12 @@ const _defSkill: data = [
   },
   {
     name: "JavaScript",
-    image: <SiJavascript style={{ color: "#f7df1e" }} />,
+    icon: <SiJavascript style={{ color: "#f7df1e" }} />,
     level: "Intermediate",
     intNode: [
       {
         name: "TypeScript",
-        image: <SiTypescript style={{ color: "#3178c6" }} />,
+        icon: <SiTypescript style={{ color: "#3178c6" }} />,
         level: "Beginner",
         isLearning: false,
       },
@@ -97,12 +100,12 @@ const _defSkill: data = [
   },
   {
     name: "NodeJs",
-    image: <SiNodedotjs style={{ color: "#83cd29" }} />,
+    icon: <SiNodedotjs style={{ color: "#83cd29" }} />,
     level: "Beginner",
     intNode: [
       {
         name: "ExpressJS",
-        image: <SiExpress style={{ color: "#353535" }} />,
+        icon: <SiExpress style={{ color: "#353535" }} />,
         level: "Beginner",
         isLearning: true,
       },
@@ -113,12 +116,12 @@ const _defSkill: data = [
   },
   {
     name: "React",
-    image: <SiReact style={{ color: "#61dbfb" }} />,
+    icon: <SiReact style={{ color: "#61dbfb" }} />,
     level: "Beginner",
     intNode: [
       {
         name: "Material UI",
-        image: <SiMaterialui style={{ color: "#007fff" }} />,
+        icon: <SiMaterialui style={{ color: "#007fff" }} />,
         level: "Beginner",
         isLearning: true,
       },
@@ -129,7 +132,7 @@ const _defSkill: data = [
   },
   {
     name: "MongoDB",
-    image: <SiMongodb style={{ color: "#4faa41" }} />,
+    icon: <SiMongodb style={{ color: "#4faa41" }} />,
     level: "Beginner",
     intNode: [],
     type: "Database",
@@ -138,7 +141,7 @@ const _defSkill: data = [
   },
   {
     name: "NextJS",
-    image: <SiNextdotjs style={{ color: "#fff" }} />,
+    icon: <SiNextdotjs style={{ color: "#fff" }} />,
     level: "Beginner",
     intNode: [],
     type: "React Framework",
@@ -147,7 +150,7 @@ const _defSkill: data = [
   },
   {
     name: "Linux",
-    image: <SiLinux style={{ color: "#000" }} />,
+    icon: <SiLinux style={{ color: "#000" }} />,
     level: "Beginner",
     intNode: [],
     type: "Operating System",
@@ -156,7 +159,7 @@ const _defSkill: data = [
   },
   {
     name: "Git",
-    image: <SiGit style={{ color: "#f05033" }} />,
+    icon: <SiGit style={{ color: "#f05033" }} />,
     level: "Beginner",
     intNode: [],
     type: "Version Control Software",
@@ -165,7 +168,7 @@ const _defSkill: data = [
   },
   {
     name: "Python",
-    image: <SiPython style={{ color: "#000" }} />,
+    icon: <SiPython style={{ color: "#000" }} />,
     level: "Beginner",
     intNode: [],
     type: "Language",

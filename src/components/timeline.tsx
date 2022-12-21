@@ -24,23 +24,27 @@ const Timeline = () => {
     <>
       <VerticalTimeline className={styles.time}>
         <VerticalTimelineElement
-          className="vertical-timeline-element"
+          className={["vertical-timeline-element", styles.timelineNode].join(
+            " "
+          )}
           contentStyle={contZero}
+          dateClassName={styles.date}
           contentArrowStyle={arrZeroR}
           date="9th Nov 2002"
-          iconClassName={styles.altIcon}
+          iconClassName={styles.zeroIcon}
           icon={<FaBirthdayCake />}
-          dateClassName={styles.date}
         >
           <h3 className="vertical-timeline-element-title">@Day Zero</h3>
         </VerticalTimelineElement>
         <VerticalTimelineElement
-          className="vertical-timeline-element"
+          className={["vertical-timeline-element", styles.timelineNode].join(
+            " "
+          )}
+          dateClassName={styles.date}
           contentStyle={contEdu}
           date="~ to 2018"
           iconClassName={styles.intIcon}
           icon={<FaGraduationCap />}
-          dateClassName={styles.date}
         >
           <h3 className="vertical-timeline-element-title">
             Nashik Cambridge School
@@ -49,12 +53,14 @@ const Timeline = () => {
           <p>Schooling till 10th</p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
-          className={"vertical-timeline-element-lmao"}
+          className={["vertical-timeline-element", styles.timelineNode].join(
+            " "
+          )}
+          dateClassName={styles.date}
           date="2018 to 2020"
           contentStyle={contEdu}
           iconClassName={styles.intIcon}
           icon={<FaGraduationCap />}
-          dateClassName={styles.date}
         >
           <h3 className="vertical-timeline-element-title">
             Matoshri Jr College
@@ -63,12 +69,14 @@ const Timeline = () => {
           <p>12th : Science Stream</p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
-          className="vertical-timeline-element"
+          className={["vertical-timeline-element", styles.timelineNode].join(
+            " "
+          )}
+          dateClassName={styles.date}
           contentStyle={contEdu}
           date="2020 to 2024"
           iconClassName={styles.intIcon}
           icon={<FaGraduationCap />}
-          dateClassName={styles.date}
         >
           <h3 className="vertical-timeline-element-title">
             Government College of Engineering
@@ -77,13 +85,15 @@ const Timeline = () => {
           <p>B.Tech : Computer Science Engineering</p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
-          className="vertical-timeline-element"
+          className={["vertical-timeline-element", styles.timelineNode].join(
+            " "
+          )}
           contentStyle={contPresent}
+          dateClassName={styles.date}
           date="Present"
           contentArrowStyle={arrPresentR}
           iconClassName={styles.finalIcon}
           icon={<FaBuilding />}
-          dateClassName={styles.date}
         >
           <h3 className="vertical-timeline-element-title">Next Big Thing</h3>
         </VerticalTimelineElement>
@@ -93,3 +103,6 @@ const Timeline = () => {
 };
 
 export default Timeline;
+
+// TODO: Make Timeline Data in /Data for easy Upgradation
+// TODO: Solve Arrow Problem --generalize some stuff

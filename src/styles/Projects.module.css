@@ -284,3 +284,8 @@
   cursor: default !important;
   flex: 1;
 }
+
+
+.counts{
+  gap: 5px;
+}

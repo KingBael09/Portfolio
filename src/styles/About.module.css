@@ -16,6 +16,12 @@
   }
 }
 
+@media (min-width: 1265px) {
+  .container {
+    padding: 1rem;
+  }
+}
+
 .main {
   padding: 1rem;
   display: flex;
@@ -31,9 +37,8 @@
   width: 100%;
 }
 
-
 /* self */
-.about{
-    padding: 1rem;
-    width: 100%;
+.about {
+  padding: 1rem;
+  width: 100%;
 }

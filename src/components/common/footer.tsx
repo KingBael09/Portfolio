@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../styles/Footer.module.css";
-import Contact from "./contact";
+import Contact from "./contact/contact";
 
 const Footer = () => {
   return (

@@ -8,9 +8,14 @@ import {
 import { BsCodeSlash } from "react-icons/bs";
 import { GrCertificate } from "react-icons/gr";
 
-type data = { id: number; title: string; link: string; icon: any }[];
+export type typeData = {
+  id: number;
+  title: string;
+  link: string;
+  icon: JSX.Element | null;
+};
 
-const _defMenu: data = [
+const _defMenu: typeData[] = [
   { id: 0, title: "Home", link: "/#top", icon: <AiOutlineHome /> },
   {
     id: 1,
@@ -18,9 +23,9 @@ const _defMenu: data = [
     link: "/#timeline",
     icon: <AiOutlineClockCircle />,
   },
-  { id: 2, title: "Projects", link: "/projects", icon: <AiOutlineBulb /> },
-  { id: 3, title: "Skills", link: "/skills", icon: <BsCodeSlash /> },
-  { id: 4, title: "About", link: "/about", icon: <AiOutlineInfoCircle /> },
+  { id: 2, title: "Projects", link: "/projects#top", icon: <AiOutlineBulb /> },
+  { id: 3, title: "Skills", link: "/skills#top", icon: <BsCodeSlash /> },
+  { id: 4, title: "About", link: "/about#top", icon: <AiOutlineInfoCircle /> },
   {
     id: 5,
     title: "Certificates",

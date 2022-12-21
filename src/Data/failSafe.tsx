@@ -1,4 +1,4 @@
-type data = {
+export type typeData = {
   id: number;
   name: string;
   full_name: string;
@@ -17,9 +17,9 @@ type data = {
   forks: number | string;
   topics: string[];
   watchers: number;
-}[];
+};
 
-const _defSafe: data = [
+const _defSafe: typeData[] = [
   {
     id: 507264809,
     name: "Algorithms",
@@ -203,3 +203,5 @@ const _defSafe: data = [
 ];
 
 export default _defSafe;
+
+

@@ -4,7 +4,7 @@
   outline: 2px solid black;
 }
 
-.altIcon {
+.zeroIcon {
   color: black;
   background-color: hsl(195, 73%, 59%);
 }
@@ -15,5 +15,9 @@
 }
 
 .date {
+  color: white;
+}
+
+.timelineNode {
   color: white;
 }

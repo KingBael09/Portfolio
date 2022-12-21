@@ -21,15 +21,15 @@ const Skills = () => {
                   component={"div"}
                 >
                   <div className={styles.wrapper}>
-                    <div className={styles.image}> {e.image}</div>
+                    <div className={styles.icon}> {e.icon}</div>
                     <div className={styles.name}>{e.name}</div>
                     {e.intNode.length
-                      ? e.intNode.map((elm: any) => {
+                      ? e.intNode.map((elm) => {
                           return (
                             <div key={elm.name} className={styles.addInfo}>
                               <div className={styles.altContainer}>
                                 <span className={styles.altImage}>
-                                  {elm.image}
+                                  {elm.icon}
                                 </span>
                                 <span className={styles.addName}>
                                   {elm.name}
@@ -52,3 +52,5 @@ const Skills = () => {
 };
 
 export default Skills;
+
+// TODO : utilize other data from _skills
