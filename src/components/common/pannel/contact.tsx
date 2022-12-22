@@ -18,7 +18,7 @@ export const ContactDialog = (dialogStatus: boolean, handleOnClose: any) => {
       open={dialogStatus}
       fullWidth
       keepMounted
-      disableScrollLock
+      disableScrollLock={isMobile ? false : true}
       disablePortal
       hideBackdrop={isMobile ? true : false}
       PaperProps={{

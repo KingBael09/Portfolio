@@ -11,7 +11,6 @@ import { PannelBtns } from "./pannelButton";
 const Pannel = () => {
   const [Menu, setMenu] = useState(false);
   const [dialogStatus, setdialogStatus] = useState(false);
-  const isMobile = window.matchMedia("(any-pointer:coarse)").matches;
 
   const handleOnClose = () => {
     setdialogStatus(false);
@@ -19,11 +18,6 @@ const Pannel = () => {
   const handleOnOpen = () => {
     setdialogStatus(true);
   };
-
-  if (!Menu && isMobile) {
-    // While in Contact in mobile
-    document.body.style.overflowY = "hidden";
-  }
 
   return (
     <div className={styles.container}>
