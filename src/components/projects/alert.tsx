@@ -1,6 +1,6 @@
 import Alert from "@mui/material/Alert";
 import Slide from "@mui/material/Slide";
-import styles from "../styles/Projects.module.css";
+import styles from "../../styles/Projects.module.css";
 
 export const SliderComponent = (showAlert: boolean) => {
   return (

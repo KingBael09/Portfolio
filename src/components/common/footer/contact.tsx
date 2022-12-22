@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Button } from "@mui/material";
 import styles from "../../styles/Footer.module.css";
 import itrData from "../../../data/contactData";

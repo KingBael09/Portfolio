@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./styles/App.module.css";
 
-import Footer from "./components/common/footer";
+import Footer from "./components/common/footer/footer";
 import Pannel from "./components/common/pannel/pannel";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";

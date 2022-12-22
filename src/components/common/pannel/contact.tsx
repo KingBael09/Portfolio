@@ -6,7 +6,7 @@ import {
   DialogTitle,
 } from "@mui/material/";
 import styles from "../../styles/Pannel.module.css";
-import Contact from "./contact";
+import Contact from "../footer/contact";
 
 const isMobile = window.matchMedia("(any-pointer:coarse)").matches;
 

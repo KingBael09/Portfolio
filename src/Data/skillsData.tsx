@@ -17,27 +17,27 @@ import {
   SiExpress,
 } from "react-icons/si";
 
-type data = {
+export type typedata = {
   name: string;
   icon: JSX.Element;
   level: string;
-  intNode: intData;
+  intNode: typenode[];
   type: string | null;
   isFav: boolean;
   isLearning: boolean;
-}[];
+};
 
 // TODO: Learn difference between interface and type
 // TODO: Try dynamic prop passing in icon TS
 
-type intData = {
+export type typenode = {
   name: string;
   icon: JSX.Element | null;
   level: string;
   isLearning: boolean;
-}[];
+};
 
-const _defSkill: data = [
+const _defSkill: typedata[] = [
   {
     name: "C",
     icon: <SiC style={{ color: "#fff" }} />,

@@ -3,27 +3,7 @@ import itrData, { typeData } from "../../../data/pannelData";
 import styles from "../../styles/Pannel.module.css";
 import { MobilePannelBtns } from "./pannelButton";
 
-const isMobile = window.matchMedia("(any-pointer:coarse)").matches;
-
-export const ShowMenu = (
-  Menu: boolean,
-  setMenu: any,
-  handleOnOpen: any,
-  dialogStatus: boolean
-) => {
-  if (Menu) {
-    // stop scrolling when in menu or in
-    document.body.style.overflowY = "hidden";
-  } else {
-    // enable scrolling when not in menu also Compensates pageshift
-    document.body.style.overflowY = "scroll";
-    if (isMobile) {
-      // if Mobile then diable scroll when dialog Open
-      if (dialogStatus) {
-        document.body.style.overflowY = "hidden";
-      }
-    }
-  }
+export const ShowMenu = (Menu: boolean, setMenu: any, handleOnOpen: any) => {
   return (
     <Fade in={Menu} timeout={500}>
       <div>

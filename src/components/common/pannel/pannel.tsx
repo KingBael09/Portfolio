@@ -4,13 +4,14 @@ import { Button } from "@mui/material/";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import itrData, { typeData } from "../../../data/pannelData";
-import { ContactDialog } from "../contact/contactDialog";
+import { ContactDialog } from "./contact";
 import { ShowMenu } from "./mobilePannel";
 import { PannelBtns } from "./pannelButton";
 
 const Pannel = () => {
   const [Menu, setMenu] = useState(false);
   const [dialogStatus, setdialogStatus] = useState(false);
+  const isMobile = window.matchMedia("(any-pointer:coarse)").matches;
 
   const handleOnClose = () => {
     setdialogStatus(false);
@@ -18,6 +19,11 @@ const Pannel = () => {
   const handleOnOpen = () => {
     setdialogStatus(true);
   };
+
+  if (!Menu && isMobile) {
+    // While in Contact in mobile
+    document.body.style.overflowY = "hidden";
+  }
 
   return (
     <div className={styles.container}>
@@ -37,7 +43,7 @@ const Pannel = () => {
             <MenuIcon fontSize="large" />
           )}
         </Button>
-        {ShowMenu(Menu, setMenu, handleOnOpen, dialogStatus)}
+        {ShowMenu(Menu, setMenu, handleOnOpen)}
       </div>
       <div className={styles.desktop}>
         <div id="desktopPannel" className={styles.pannel}>
