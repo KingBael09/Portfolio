@@ -1,7 +1,6 @@
 import ButtonBase from "@mui/material/ButtonBase";
 import { typedata, typenode } from "../../data/skillsData";
 import styles from "../../styles/Skills.module.css";
-
 interface cardType {
   mapData: typedata;
 }
