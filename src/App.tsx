@@ -12,22 +12,26 @@ import About from "./pages/about";
 import Certificates from "./pages/certificates";
 import NotFound from "./pages/notFound";
 
+import { DataWrapper } from "./context/sessionProj";
+
 function App() {
   return (
-    <div className={styles.App}>
-      <Router>
-        <Pannel />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/certificates" element={<Certificates />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Footer />
-      </Router>
-    </div>
+    <DataWrapper>
+      <div className={styles.App}>
+        <Router>
+          <Pannel />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/certificates" element={<Certificates />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <Footer />
+        </Router>
+      </div>
+    </DataWrapper>
   );
 }
 

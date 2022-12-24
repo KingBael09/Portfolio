@@ -203,5 +203,3 @@ const _defSafe: typeData[] = [
 ];
 
 export default _defSafe;
-
-

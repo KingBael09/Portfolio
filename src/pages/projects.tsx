@@ -6,6 +6,7 @@ import failSafe, { typeData } from "../data/failSafe";
 import Loader from "../components/common/loader";
 import { SliderComponent } from "../components/projects/alert";
 import { DefaultCard, FailedCard } from "../components/projects/cards";
+import { useProjectContext } from "../context/sessionProj";
 
 // const url: string = "https://api.github.com/users/KingBael09/repos";
 // const url: string = "https://animechan.vercel.app/api/random";
@@ -15,24 +16,32 @@ const Projects = () => {
   const [data, setData] = useState(failSafe);
   const [showAlert, setshowAlert] = useState(false);
   const [loading, setloading] = useState(false);
-  // const viewportWidth = window.innerWidth;
+
+  const [context, setcontext]: any = useProjectContext();
 
   const fetch = async () => {
     setloading(true);
-    try {
-      const data = axios.get(url);
-      const res = await data;
-      setData(res.data);
-      setloading(false);
-    } catch (error) {
-      console.log("failed");
+    if (!context) {
+      try {
+        const data = axios.get(url);
+        const res = await data;
+        setData(res.data);
+        setcontext(res.data);
+        setloading(false);
+      } catch (error) {
+        console.log("failed");
+        setcontext(data);
+        setloading(false);
+      }
+    } else {
+      setData(context);
       setloading(false);
     }
-    // TODO: Try using Context for persisting data during Session
   };
 
   useEffect(() => {
     fetch();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (loading) {

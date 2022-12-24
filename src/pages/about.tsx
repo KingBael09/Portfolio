@@ -7,7 +7,10 @@ const About = () => {
       <div className={styles.main}>
         <div className={styles.heading}>#About Me</div>
         <div className={styles.about}>
-          Something About Me
+          <div className={styles.highlight}>
+            Hello I'm <span className={styles.name}>Jayesh</span>
+          </div>
+          <div></div>
         </div>
       </div>
     </div>
