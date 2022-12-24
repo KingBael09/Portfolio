@@ -11,7 +11,7 @@ html {
   background-color: hsl(220, 12%, 10%);
   color: white;
   /* to compensate pageshift during loading */
-  overflow-y: scroll !important;
+  overflow-y: scroll;
 }
 
 *,
