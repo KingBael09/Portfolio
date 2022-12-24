@@ -2,8 +2,10 @@ import React from "react";
 import styles from "../styles/Skills.module.css";
 import _skills from "../data/skillsData";
 import { SkillCards } from "../components/skills/cards";
+import { DocumentTitle } from "../hooks/docTitle";
 
 const Skills = () => {
+  DocumentTitle("Skills");
   return (
     <div className={styles.container}>
       <div className={styles.main}>

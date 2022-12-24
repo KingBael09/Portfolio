@@ -1,10 +1,7 @@
 import React from "react";
 import styles from "./styles/App.module.css";
-
 import Footer from "./components/common/footer/footer";
 import Pannel from "./components/common/pannel/pannel";
-
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/home";
 import Projects from "./pages/projects";
 import Skills from "./pages/skills";
@@ -12,12 +9,13 @@ import About from "./pages/about";
 import Certificates from "./pages/certificates";
 import NotFound from "./pages/notFound";
 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { DataWrapper } from "./context/sessionProj";
 
 function App() {
   return (
-    <DataWrapper>
-      <div className={styles.App}>
+    <div className={styles.App}>
+      <DataWrapper>
         <Router>
           <Pannel />
           <Routes>
@@ -30,8 +28,8 @@ function App() {
           </Routes>
           <Footer />
         </Router>
-      </div>
-    </DataWrapper>
+      </DataWrapper>
+    </div>
   );
 }
 

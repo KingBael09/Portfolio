@@ -1,7 +1,9 @@
 import React from "react";
 import styles from "../styles/About.module.css";
+import { DocumentTitle } from "../hooks/docTitle";
 
 const About = () => {
+  DocumentTitle("About");
   return (
     <div className={styles.container}>
       <div className={styles.main}>

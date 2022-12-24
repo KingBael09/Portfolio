@@ -2,8 +2,10 @@ import React from "react";
 import styles from "../styles/404.module.css";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
+import { DocumentTitle } from "../hooks/docTitle";
 
 const NotFound = () => {
+  DocumentTitle("Not Found!");
   return (
     <div className={styles.container}>
       <div className={styles.main}>
