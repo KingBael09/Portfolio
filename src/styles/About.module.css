@@ -14,6 +14,17 @@
     text-shadow: 3px 3px 0 hsl(0, 0%, 0%), 6px 6px 0 hsl(0, 0%, 0%),
       9px 9px hsl(0, 0%, 0%);
   }
+  .highlight {
+    font-size: 5rem !important;
+  }
+
+  .content {
+    font-size: 2.5rem !important;
+  }
+
+  .subMsg {
+    font-size: 1rem !important;
+  }
 }
 
 @media (min-width: 1265px) {
@@ -41,4 +52,26 @@
 .about {
   padding: 1rem;
   width: 100%;
+}
+
+.highlight {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.name {
+  color: hsl(0, 89%, 66%);
+}
+
+.content {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.subMsg {
+  font-family: "Jetbrains Mono", monospace;
+  font-size: 0.8rem;
 }

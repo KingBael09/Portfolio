@@ -10,6 +10,7 @@ const Certificates = () => {
       <div className={styles.main}>
         <div className={styles.heading}>#Certificates</div>
         <div className={styles.certificates}>
+          {/* Work In Progress */}
           <Construction />
         </div>
       </div>

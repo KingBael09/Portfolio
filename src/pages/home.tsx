@@ -1,36 +1,9 @@
-import React, { useState, useEffect } from "react";
 import styles from "../styles/Home.module.css";
 import Timeline from "../components/timeline";
 import Typewriter from "../components/writterComponent";
-import { BsChevronDoubleDown } from "react-icons/bs";
+import { FadingArrow } from "../components/fadingArrow";
 
 const Home = () => {
-  const [scroll, setscroll] = useState(0);
-
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    setscroll(position);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const fadingArrow = () => {
-    return (
-      <BsChevronDoubleDown
-        style={{
-          visibility: scroll === 0 ? "visible" : "hidden",
-          opacity: scroll === 0 ? 1 : 0,
-        }}
-      />
-    );
-  };
-
   return (
     <div className={styles.container}>
       <div id="#top" className={styles.main}>
@@ -51,7 +24,9 @@ const Home = () => {
               </span>
             </span>
           </div>
-          <span className={styles.arrow}>{fadingArrow()}</span>
+          <span className={styles.arrow}>
+            <FadingArrow />
+          </span>
         </div>
         <div className={styles.journey}>
           <div id="timeline" className={styles.heading}>
