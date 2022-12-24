@@ -122,4 +122,3 @@ export const MobilePannelBtns = (props: typeButton) => {
   }
 };
 
-// TODO: Optimize Style imports

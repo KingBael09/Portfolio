@@ -62,5 +62,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
-// TODO: OPTIMIZE Code

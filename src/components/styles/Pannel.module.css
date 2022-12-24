@@ -137,6 +137,7 @@
   right: 2vw;
   border-radius: 10px;
   width: 9vw;
+  min-height: 600px !important;
   height: 90vh;
   top: 5vh;
   display: flex;

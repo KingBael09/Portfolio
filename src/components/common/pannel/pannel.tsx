@@ -62,5 +62,3 @@ const Pannel = () => {
 };
 
 export default Pannel;
-
-// TODO: Code Could be Optimized

@@ -18,8 +18,6 @@ export const SkillCards = (props: cardType) => {
         component={"div"}
       >
         <div className={styles.wrapper}>
-          <div className={styles.icon}> {e.icon}</div>
-          <div className={styles.name}>{e.name}</div>
           {e.intNode.length
             ? e.intNode.map((elm: typenode) => {
                 return (
@@ -32,6 +30,9 @@ export const SkillCards = (props: cardType) => {
                 );
               })
             : null}
+          <div className={styles.icon}> {e.icon}</div>
+          <div className={styles.name}>{e.name}</div>
+
           <div className={styles.level}>{e.level}</div>
         </div>
       </ButtonBase>

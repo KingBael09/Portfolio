@@ -37,5 +37,4 @@ export const ShowMenu = (Menu: boolean, setMenu: any, handleOnOpen: any) => {
   );
 };
 
-// TODO: Create Alternate Styles.module fo mobile
 // TODO: Mobile Dialog isn't optimized

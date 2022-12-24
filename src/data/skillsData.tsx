@@ -73,7 +73,7 @@ const _defSkill: typedata[] = [
     intNode: [
       {
         name: "BootStrap",
-        icon: <SiBootstrap style={{ color: "#7634fa" }} />,
+        icon: <SiBootstrap style={{ color: "#a87cff" }} />,
         level: "Intermediate",
         isLearning: false,
       },

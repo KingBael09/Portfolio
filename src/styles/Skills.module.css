@@ -37,6 +37,46 @@
   .card:hover .level {
     opacity: 1;
   }
+
+  /* Extra Info in Desktop Mode */
+
+  .altContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .addInfo {
+    font-size: 1.8rem;
+    border-radius: 5px;
+    width: 100%;
+    display: flex !important;
+  }
+
+  .addName {
+    font-size: 1rem;
+    font-family: "Jetbrains Mono", monospace;
+    position: absolute;
+    color: black;
+    white-space: nowrap;
+    opacity: 0;
+    left: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+    background-color: hsl(220, 12%, 45%);
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .wrapper {
+    margin-top: 0rem !important;
+  }
+
+  .wrapper:not(:has(.addInfo)) {
+    margin-top: 4rem !important;
+  }
 }
 
 @media (min-width: 1265px) {
@@ -81,7 +121,6 @@
   margin-block: 1rem;
   width: 100%;
   transition: all 0.2s ease-in-out;
-  /* TODO: Add other transtion effect for heading */
 }
 
 .card {
@@ -107,10 +146,10 @@
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   padding: 0.5rem 0;
   flex-grow: 1;
-  position: relative;
+  width: 100%;
 }
 
 .level {
@@ -130,33 +169,6 @@
   font-weight: 700;
 }
 
-.altContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
 .addInfo {
-  /* position: relative; */
-  font-size: 1.8rem;
-  border-radius: 5px;
-  padding: 10px;
-  /* display: none; */
-  /* TODO: make extra icons appear in top left */
-  position: absolute;
-}
-
-.addName {
-  font-size: 1rem;
-  font-family: "Jetbrains Mono", monospace;
-  position: absolute;
-  color: black;
-  white-space: nowrap;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.5s ease-in-out;
-  background-color: hsl(220, 12%, 45%);
-  padding: 10px;
-  border-radius: 10px;
+  display: none;
 }

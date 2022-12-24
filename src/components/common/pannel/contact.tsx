@@ -43,5 +43,3 @@ export const ContactDialog = (dialogStatus: boolean, handleOnClose: any) => {
     </Dialog>
   );
 };
-
-// TODO: Move Styles to new Module

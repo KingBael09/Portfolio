@@ -17,5 +17,3 @@ export const SliderComponent = (showAlert: boolean) => {
     </Slide>
   );
 };
-
-// TODO: change Style Location
