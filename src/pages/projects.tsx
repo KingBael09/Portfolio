@@ -9,9 +9,9 @@ import { DefaultCard, FailedCard } from "../components/projects/cards";
 import { useProjectContext } from "../context/sessionProj";
 import { DocumentTitle } from "../hooks/docTitle";
 
-// const url: string = "https://api.github.com/users/KingBael09/repos";
+const url: string = "https://api.github.com/users/KingBael09/repos";
 // const url: string = "https://animechan.vercel.app/api/random";
-const url: string = "lmao";
+// const url: string = "lmao";
 
 const Projects = () => {
   DocumentTitle("Projects");
