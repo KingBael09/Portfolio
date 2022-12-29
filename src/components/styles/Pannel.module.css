@@ -130,6 +130,12 @@
   color: hsla(0, 79%, 72%, 0.1);
 }
 
+@supports not selector(:has) {
+  .mIcons {
+    color: rgba(255, 255, 255, 0.1);
+  }
+}
+
 /* Desktop Design */
 
 .pannel {
