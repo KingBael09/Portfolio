@@ -2,7 +2,7 @@
   .oops {
     font-size: 10rem !important;
   }
-  .msg{
+  .msg {
     font-size: 2rem !important;
   }
 }
@@ -34,14 +34,14 @@
 }
 
 .msg {
-  font-size: min(1.1rem,5vw);
+  font-size: min(1.1rem, 5vw);
 }
 
-.button{
-    font-size: 2rem !important;
-    color: hsl(0, 89%, 66%) !important;
-    font-weight: 900 !important;
-    padding: 1rem 3rem !important;
-    border-radius: 30px !important;
-    margin-top: 10vh !important;
+.button {
+  font-size: 2rem !important;
+  color: hsl(0, 89%, 66%) !important;
+  font-weight: 900 !important;
+  padding: 1rem 3rem !important;
+  border-radius: 30px !important;
+  margin-top: 10vh !important;
 }

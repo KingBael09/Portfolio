@@ -90,7 +90,6 @@
   }
 }
 
-
 .proj {
   display: grid;
   gap: 2rem;
@@ -285,7 +284,6 @@
   flex: 1;
 }
 
-
-.counts{
+.counts {
   gap: 5px;
 }

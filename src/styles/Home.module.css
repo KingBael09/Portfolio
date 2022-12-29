@@ -97,13 +97,13 @@
 .desg {
   position: absolute;
   bottom: 15%;
-  font-size: 2rem;
+  font-size: min(8vw, 2rem);
   font-weight: 500;
 }
 
 .arrow {
   position: absolute;
-  bottom: 1rem;
+  bottom: 8%;
   background-repeat: no-repeat;
   font-size: 2rem;
   animation: blink 0.5s ease 0s infinite alternate;
