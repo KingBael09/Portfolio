@@ -44,4 +44,3 @@ const Home = () => {
 export default Home;
 
 // TODO: ADD intrest Section
-// TODO : Add Preloader

@@ -6,7 +6,14 @@ import styles from "../../styles/Projects.module.css";
 
 const viewportWidth = window.innerWidth;
 
-export const DefaultCard = (e: typeData, setshowAlert: any) => {
+interface cardProps {
+  mapData: typeData;
+  action?: any;
+}
+
+export const DefaultCard = (props: cardProps) => {
+  const e = props.mapData;
+  const setAlert = props.action;
   return (
     <div key={e.id} className={styles.card}>
       <ButtonBase
@@ -71,10 +78,7 @@ export const DefaultCard = (e: typeData, setshowAlert: any) => {
             {
               <IconButton
                 onClick={() => {
-                  setshowAlert(true);
-                  setTimeout(() => {
-                    setshowAlert(false);
-                  }, 1500);
+                  setAlert(true);
                   navigator.clipboard.writeText(e.clone_url);
                 }}
                 color="inherit"
@@ -97,7 +101,8 @@ export const DefaultCard = (e: typeData, setshowAlert: any) => {
   );
 };
 
-export const FailedCard = (e: typeData) => {
+export const FailedCard = (props: cardProps) => {
+  const e = props.mapData;
   return (
     <div key={e.id} className={[styles.card, styles.failStatus].join(" ")}>
       <div className={[styles.name, styles.fail].join(" ")}>

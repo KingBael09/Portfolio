@@ -4,14 +4,14 @@ import styles from "../styles/Projects.module.css";
 import axios from "axios";
 import failSafe, { typeData } from "../data/failSafe";
 import Loader from "../components/common/loader";
-import { SliderComponent } from "../components/projects/alert";
 import { DefaultCard, FailedCard } from "../components/projects/cards";
 import { useProjectContext } from "../context/sessionProj";
 import { DocumentTitle } from "../hooks/docTitle";
+import Snackbar from "@mui/material/Snackbar";
 
-const url: string = "https://api.github.com/users/KingBael09/repos";
+// const url: string = "https://api.github.com/users/KingBael09/repos";
 // const url: string = "https://animechan.vercel.app/api/random";
-// const url: string = "lmao";
+const url: string = "lmao";
 
 const Projects = () => {
   DocumentTitle("Projects");
@@ -52,15 +52,24 @@ const Projects = () => {
     return (
       <div className={styles.container}>
         <div className={styles.main}>
-          {SliderComponent(showAlert)}
+          <Snackbar
+            open={showAlert}
+            anchorOrigin={{ vertical: "top", horizontal: "center" }}
+            message="URL Coppied!"
+            autoHideDuration={2000}
+            ContentProps={{ className: styles.msg }}
+            onClose={() => {
+              setshowAlert(false);
+            }}
+          />
 
           <div className={styles.heading}>#Projects</div>
           <div className={styles.proj}>
             {data.map((e: typeData) => {
               if (e.language && e.name !== "__API_FAILED") {
-                return DefaultCard(e, setshowAlert);
+                return <DefaultCard action={setshowAlert} mapData={e} />;
               } else if (e.name === "__API_FAILED") {
-                return FailedCard(e);
+                return <FailedCard mapData={e} />;
               } else {
                 return null;
               }

@@ -218,10 +218,11 @@
 }
 
 .msg {
-  display: none;
-  position: fixed;
-  top: 2rem;
-  z-index: 90;
+  color: black !important;
+  background-color: white !important;
+  font-weight: 700 !important;
+  font-family: "Poppins", sans-serif !important;
+  justify-content: center !important;
 }
 
 .failStatus {
@@ -258,6 +259,7 @@
   justify-content: center;
   align-items: center;
   user-select: none;
+  transition: all 0.2s ease;
 }
 
 .badge > * {
