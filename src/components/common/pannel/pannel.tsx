@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "../../styles/Pannel.module.css";
 import { Button } from "@mui/material/";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -7,6 +7,7 @@ import itrData, { typeData } from "../../../data/pannelData";
 import { ContactDialog } from "./contact";
 import { ShowMenu } from "./mobilePannel";
 import { PannelBtns } from "./pannelButton";
+import { CSSTransition } from "react-transition-group";
 
 const Pannel = () => {
   const [Menu, setMenu] = useState(false);
@@ -18,6 +19,13 @@ const Pannel = () => {
   const handleOnOpen = () => {
     setdialogStatus(true);
   };
+
+  const [loadComponent, setloadComponent] = useState(false);
+  const nodeRef = useRef(null);
+
+  useEffect(() => {
+    setloadComponent(true);
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -39,23 +47,34 @@ const Pannel = () => {
         </Button>
         {ShowMenu(Menu, setMenu, handleOnOpen)}
       </div>
+
       <div className={styles.desktop}>
-        <div id="desktopPannel" className={styles.pannel}>
-          {itrData.map((e: typeData) => {
-            if (e.title !== "Contact" && e.title !== "Timeline") {
-              return <PannelBtns key={e.id} mapData={e} isNavHead={true} />;
-            } else {
-              return (
-                <PannelBtns
-                  key={e.id}
-                  mapData={e}
-                  isNavHead={false}
-                  action={handleOnOpen}
-                />
-              );
-            }
-          })}
-        </div>
+        <CSSTransition
+          in={loadComponent}
+          nodeRef={nodeRef}
+          timeout={400}
+          classNames={{
+            enterActive: styles.pannelEnter,
+            enterDone: styles.pannelEnterActive,
+          }}
+        >
+          <div ref={nodeRef} id="desktopPannel" className={styles.pannel}>
+            {itrData.map((e: typeData) => {
+              if (e.title !== "Contact" && e.title !== "Timeline") {
+                return <PannelBtns key={e.id} mapData={e} isNavHead={true} />;
+              } else {
+                return (
+                  <PannelBtns
+                    key={e.id}
+                    mapData={e}
+                    isNavHead={false}
+                    action={handleOnOpen}
+                  />
+                );
+              }
+            })}
+          </div>
+        </CSSTransition>
       </div>
     </div>
   );
