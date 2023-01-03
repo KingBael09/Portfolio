@@ -75,7 +75,7 @@ const About = () => {
               <span>My Favourite Framework : NextJS</span>
             </div>
           </div>
-          {/* <div className={styles.interest}>Interest</div> */}
+          <div className={styles.interest}>Interest</div>
         </div>
       </div>
     </div>
