@@ -35,12 +35,12 @@
     display: flex;
     flex-direction: row !important;
   }
-  .about {
+  /* .about {
     flex: 0.6;
   }
   .interest {
     flex-grow: 0.4;
-  }
+  } */
 }
 
 .main {
