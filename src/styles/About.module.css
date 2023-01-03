@@ -31,16 +31,6 @@
   .container {
     padding: 1rem;
   }
-  .section {
-    display: flex;
-    flex-direction: row !important;
-  }
-  /* .about {
-    flex: 0.6;
-  }
-  .interest {
-    flex-grow: 0.4;
-  } */
 }
 
 .main {
@@ -91,14 +81,3 @@
   font-size: 0.8rem;
 }
 
-.section {
-  display: flex;
-  flex-direction: column;
-}
-
-.interest{
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}

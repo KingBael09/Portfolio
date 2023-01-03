@@ -7,7 +7,7 @@
     display: none !important;
   }
   .paper {
-    margin: .5rem !important;
+    margin: 0.5rem !important;
     width: 100% !important;
     padding: 0.5rem !important;
     height: 20vh;
@@ -255,4 +255,20 @@
   font-weight: 700 !important;
   font-size: 1rem !important;
   font-family: "Poppins", sans-serif !important;
+}
+
+/* ! Experemental Feature */
+
+.pannel {
+  opacity: 0;
+}
+
+.pannelEnter {
+  transform: translateX(100%);
+  opacity: 0;
+}
+.pannelEnterActive {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 300ms ease-in-out;
 }

@@ -172,3 +172,18 @@
 .addInfo {
   display: none;
 }
+/* !Experemental Feature */
+
+.card {
+  opacity: 0;
+}
+
+.cardEnter {
+  transform: scale(.5);
+  opacity: 0;
+}
+.cardEnterActive {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 300ms ease-in-out;
+}
