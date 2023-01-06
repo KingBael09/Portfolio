@@ -9,6 +9,8 @@ import About from "./pages/about";
 import Certificates from "./pages/certificates";
 import NotFound from "./pages/notFound";
 
+// import { motion } from "framer-motion";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { DataWrapper } from "./context/sessionProj";
 
@@ -34,3 +36,5 @@ function App() {
 }
 
 export default App;
+
+// learn Motion Lib from 'Framer-Motion'

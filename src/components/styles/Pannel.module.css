@@ -272,3 +272,7 @@
   transform: translateX(0);
   transition: all 300ms ease-in-out;
 }
+
+.container {
+  z-index: 100;
+}

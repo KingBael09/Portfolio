@@ -14,8 +14,9 @@ interface cardProps {
 export const DefaultCard = (props: cardProps) => {
   const e = props.mapData;
   const setAlert = props.action;
+
   return (
-    <div key={e.id} className={styles.card}>
+    <div className={styles.card}>
       <ButtonBase
         className={styles.touch}
         disableRipple={viewportWidth >= 850 ? false : true}

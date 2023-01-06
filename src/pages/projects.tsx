@@ -67,9 +67,11 @@ const Projects = () => {
           <div className={styles.proj}>
             {data.map((e: typeData) => {
               if (e.language && e.name !== "__API_FAILED") {
-                return <DefaultCard action={setshowAlert} mapData={e} />;
+                return (
+                  <DefaultCard key={e.id} action={setshowAlert} mapData={e} />
+                );
               } else if (e.name === "__API_FAILED") {
-                return <FailedCard mapData={e} />;
+                return <FailedCard key={e.id} mapData={e} />;
               } else {
                 return null;
               }
